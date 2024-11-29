@@ -1,0 +1,15 @@
+parameters:
+	level: 8
+	paths:
+		- src
+		- tests
+	ignoreErrors:
+	    - identifier: missingType.iterableValue
+
+	    - message: '#^Parameter .*$#'
+	      identifier: argument.type
+	      path: src/DatabaseManagerWithTagger.php
+
+	    - message: '#Method [a-zA-Z0-9\\_]+::addTag\(\).*#'
+	      identifier: return.type
+	      path: src/DatabaseWithTagger.php
