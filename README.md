@@ -23,9 +23,23 @@ use Cycle\Database\Config\DatabaseConfig;
 use SquidIT\Cycle\Sql\Tagger\DatabaseManagerWithTagger;
 use SquidIT\Cycle\Sql\Tagger\DatabaseWithTagger;
 
-// setup your cycle/database database configuration
+/**
+ * Set up your cycle/database database configuration
+ * 
+ * Make sure you select the following driver
+ * driver: SquidIT\Cycle\Sql\Tagger\Driver\MySQL\MySQLTagDriver::class,
+ */
 /** @var DatabaseConfig $dbConfig */
-$dbConfig = new DatabaseConfig(...);
+$dbConfig = new Config\DatabaseConfig([
+            ...
+            'connections' => [
+                'mariaDbDsn' => new Config\MySQLDriverConfig(
+                    ...
+                    driver: MySQLTagDriver::class,
+                    ...
+                ),
+            ],
+        ]);
 
 $dbal = new DatabaseManagerWithTagger($dbConfig);
 
