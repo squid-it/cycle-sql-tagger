@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+<coverage line-rate="1" branch-rate="0" lines-covered="113" lines-valid="113" branches-covered="0" branches-valid="0" complexity="51" version="0.4">
+  
+  <packages>
+    <package name="DatabaseManagerWithTagger.php" line-rate="1" branch-rate="0" complexity="16">
+      <classes>
+        <class name="SquidIT\Cycle\Sql\Tagger\DatabaseManagerWithTagger" filename="src/DatabaseManagerWithTagger.php" line-rate="1" branch-rate="0" complexity="16">
+          <methods>
+            <method name="__construct" signature="Cycle\Database\Config\DatabaseConfig $config, ?Cycle\Database\LoggerFactoryInterface $loggerFactory" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="31" hits="6"/>
+              </lines>
+            </method>
+            <method name="setLogger" signature="Psr\Log\LoggerInterface $logger" line-rate="1" branch-rate="0" complexity="3">
+              <lines>
+                <line number="38" hits="2"/>
+                <line number="41" hits="2"/>
+                <line number="42" hits="1"/>
+                <line number="43" hits="1"/>
+              </lines>
+            </method>
+            <method name="database" signature="?string $database" line-rate="1" branch-rate="0" complexity="4">
+              <lines>
+                <line number="53" hits="3"/>
+                <line number="54" hits="2"/>
+                <line number="59" hits="3"/>
+                <line number="61" hits="3"/>
+                <line number="62" hits="1"/>
+                <line number="65" hits="3"/>
+                <line number="66" hits="3"/>
+                <line number="67" hits="3"/>
+                <line number="69" hits="3"/>
+              </lines>
+            </method>
+            <method name="driver" signature="string $driver" line-rate="1" branch-rate="0" complexity="4">
+              <lines>
+                <line number="79" hits="6"/>
+                <line number="80" hits="3"/>
+                <line number="83" hits="6"/>
+                <line number="84" hits="6"/>
+                <line number="86" hits="6"/>
+                <line number="87" hits="6"/>
+                <line number="89" hits="6"/>
+                <line number="90" hits="1"/>
+                <line number="94" hits="6"/>
+              </lines>
+            </method>
+            <method name="makeDatabase" signature="Cycle\Database\Config\DatabasePartial $database" line-rate="1" branch-rate="0" complexity="2">
+              <lines>
+                <line number="99" hits="3"/>
+                <line number="100" hits="3"/>
+                <line number="101" hits="3"/>
+                <line number="102" hits="3"/>
+                <line number="103" hits="3"/>
+                <line number="104" hits="3"/>
+                <line number="106" hits="3"/>
+              </lines>
+            </method>
+            <method name="getLoggerForDriver" signature="Cycle\Database\Driver\DriverInterface $driver" line-rate="1" branch-rate="0" complexity="2">
+              <lines>
+                <line number="111" hits="6"/>
+                <line number="112" hits="5"/>
+                <line number="115" hits="1"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="31" hits="6"/>
+            <line number="38" hits="2"/>
+            <line number="41" hits="2"/>
+            <line number="42" hits="1"/>
+            <line number="43" hits="1"/>
+            <line number="53" hits="3"/>
+            <line number="54" hits="2"/>
+            <line number="59" hits="3"/>
+            <line number="61" hits="3"/>
+            <line number="62" hits="1"/>
+            <line number="65" hits="3"/>
+            <line number="66" hits="3"/>
+            <line number="67" hits="3"/>
+            <line number="69" hits="3"/>
+            <line number="79" hits="6"/>
+            <line number="80" hits="3"/>
+            <line number="83" hits="6"/>
+            <line number="84" hits="6"/>
+            <line number="86" hits="6"/>
+            <line number="87" hits="6"/>
+            <line number="89" hits="6"/>
+            <line number="90" hits="1"/>
+            <line number="94" hits="6"/>
+            <line number="99" hits="3"/>
+            <line number="100" hits="3"/>
+            <line number="101" hits="3"/>
+            <line number="102" hits="3"/>
+            <line number="103" hits="3"/>
+            <line number="104" hits="3"/>
+            <line number="106" hits="3"/>
+            <line number="111" hits="6"/>
+            <line number="112" hits="5"/>
+            <line number="115" hits="1"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="DatabaseWithTagger.php" line-rate="1" branch-rate="0" complexity="23">
+      <classes>
+        <class name="SquidIT\Cycle\Sql\Tagger\DatabaseWithTagger" filename="src/DatabaseWithTagger.php" line-rate="1" branch-rate="0" complexity="23">
+          <methods>
+            <method name="__construct" signature="Cycle\Database\DatabaseInterface $db" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="35" hits="26"/>
+              </lines>
+            </method>
+            <method name="getName" signature="" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="39" hits="2"/>
+              </lines>
+            </method>
+            <method name="getType" signature="" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="44" hits="1"/>
+              </lines>
+            </method>
+            <method name="getDriver" signature="int $type" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="49" hits="1"/>
+              </lines>
+            </method>
+            <method name="withPrefix" signature="string $prefix, bool $add" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="57" hits="1"/>
+              </lines>
+            </method>
+            <method name="getPrefix" signature="" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="62" hits="1"/>
+              </lines>
+            </method>
+            <method name="hasTable" signature="string $name" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="67" hits="1"/>
+              </lines>
+            </method>
+            <method name="getTables" signature="" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="72" hits="1"/>
+              </lines>
+            </method>
+            <method name="table" signature="string $name" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="77" hits="1"/>
+              </lines>
+            </method>
+            <method name="execute" signature="string $query, array $parameters" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="85" hits="1"/>
+                <line number="86" hits="1"/>
+                <line number="88" hits="1"/>
+              </lines>
+            </method>
+            <method name="query" signature="string $query, array $parameters" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="96" hits="3"/>
+                <line number="97" hits="3"/>
+                <line number="99" hits="3"/>
+              </lines>
+            </method>
+            <method name="insert" signature="string $table" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="105" hits="1"/>
+                <line number="107" hits="1"/>
+              </lines>
+            </method>
+            <method name="update" signature="string $table, array $values, array $where" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="113" hits="1"/>
+                <line number="115" hits="1"/>
+              </lines>
+            </method>
+            <method name="delete" signature="string $table, array $where" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="121" hits="2"/>
+                <line number="123" hits="2"/>
+              </lines>
+            </method>
+            <method name="select" signature="$columns" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="129" hits="2"/>
+                <line number="131" hits="2"/>
+              </lines>
+            </method>
+            <method name="transaction" signature="callable $callback, ?string $isolationLevel" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="138" hits="1"/>
+              </lines>
+            </method>
+            <method name="begin" signature="?string $isolationLevel" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="143" hits="1"/>
+              </lines>
+            </method>
+            <method name="commit" signature="" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="148" hits="1"/>
+              </lines>
+            </method>
+            <method name="rollback" signature="" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="153" hits="1"/>
+              </lines>
+            </method>
+            <method name="__get" signature="string $name" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="163" hits="1"/>
+              </lines>
+            </method>
+            <method name="addTag" signature="Cycle\Database\Query\QueryInterface $query" line-rate="1" branch-rate="0" complexity="3">
+              <lines>
+                <line number="175" hits="6"/>
+                <line number="176" hits="1"/>
+                <line number="179" hits="5"/>
+                <line number="181" hits="5"/>
+                <line number="182" hits="1"/>
+                <line number="183" hits="1"/>
+                <line number="184" hits="1"/>
+                <line number="188" hits="4"/>
+                <line number="189" hits="4"/>
+                <line number="191" hits="4"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="35" hits="26"/>
+            <line number="39" hits="2"/>
+            <line number="44" hits="1"/>
+            <line number="49" hits="1"/>
+            <line number="57" hits="1"/>
+            <line number="62" hits="1"/>
+            <line number="67" hits="1"/>
+            <line number="72" hits="1"/>
+            <line number="77" hits="1"/>
+            <line number="85" hits="1"/>
+            <line number="86" hits="1"/>
+            <line number="88" hits="1"/>
+            <line number="96" hits="3"/>
+            <line number="97" hits="3"/>
+            <line number="99" hits="3"/>
+            <line number="105" hits="1"/>
+            <line number="107" hits="1"/>
+            <line number="113" hits="1"/>
+            <line number="115" hits="1"/>
+            <line number="121" hits="2"/>
+            <line number="123" hits="2"/>
+            <line number="129" hits="2"/>
+            <line number="131" hits="2"/>
+            <line number="138" hits="1"/>
+            <line number="143" hits="1"/>
+            <line number="148" hits="1"/>
+            <line number="153" hits="1"/>
+            <line number="163" hits="1"/>
+            <line number="175" hits="6"/>
+            <line number="176" hits="1"/>
+            <line number="179" hits="5"/>
+            <line number="181" hits="5"/>
+            <line number="182" hits="1"/>
+            <line number="183" hits="1"/>
+            <line number="184" hits="1"/>
+            <line number="188" hits="4"/>
+            <line number="189" hits="4"/>
+            <line number="191" hits="4"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Driver\MySQL\MySQLTagDriver.php" line-rate="1" branch-rate="0" complexity="1">
+      <classes>
+        <class name="SquidIT\Cycle\Sql\Tagger\Driver\MySQL\MySQLTagDriver" filename="src/Driver\MySQL\MySQLTagDriver.php" line-rate="1" branch-rate="0" complexity="1">
+          <methods>
+            <method name="create" signature="Cycle\Database\Config\DriverConfig $config" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="21" hits="12"/>
+                <line number="22" hits="12"/>
+                <line number="23" hits="12"/>
+                <line number="24" hits="12"/>
+                <line number="25" hits="12"/>
+                <line number="26" hits="12"/>
+                <line number="27" hits="12"/>
+                <line number="28" hits="12"/>
+                <line number="29" hits="12"/>
+                <line number="30" hits="12"/>
+                <line number="31" hits="12"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="21" hits="12"/>
+            <line number="22" hits="12"/>
+            <line number="23" hits="12"/>
+            <line number="24" hits="12"/>
+            <line number="25" hits="12"/>
+            <line number="26" hits="12"/>
+            <line number="27" hits="12"/>
+            <line number="28" hits="12"/>
+            <line number="29" hits="12"/>
+            <line number="30" hits="12"/>
+            <line number="31" hits="12"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Driver\MySQL\Query\InsertQueryWithTagger.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes>
+        <class name="SquidIT\Cycle\Sql\Tagger\Driver\MySQL\Query\InsertQueryWithTagger" filename="src/Driver\MySQL\Query\InsertQueryWithTagger.php" line-rate="0" branch-rate="0" complexity="0">
+          <methods/>
+          <lines/>
+        </class>
+      </classes>
+    </package>
+    <package name="Driver\MySQL\Query\MySQLDeleteQueryWithTagger.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes>
+        <class name="SquidIT\Cycle\Sql\Tagger\Driver\MySQL\Query\MySQLDeleteQueryWithTagger" filename="src/Driver\MySQL\Query\MySQLDeleteQueryWithTagger.php" line-rate="0" branch-rate="0" complexity="0">
+          <methods/>
+          <lines/>
+        </class>
+      </classes>
+    </package>
+    <package name="Driver\MySQL\Query\MySQLSelectQueryWithTagger.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes>
+        <class name="SquidIT\Cycle\Sql\Tagger\Driver\MySQL\Query\MySQLSelectQueryWithTagger" filename="src/Driver\MySQL\Query\MySQLSelectQueryWithTagger.php" line-rate="0" branch-rate="0" complexity="0">
+          <methods/>
+          <lines/>
+        </class>
+      </classes>
+    </package>
+    <package name="Driver\MySQL\Query\MySQLUpdateQueryWithTagger.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes>
+        <class name="SquidIT\Cycle\Sql\Tagger\Driver\MySQL\Query\MySQLUpdateQueryWithTagger" filename="src/Driver\MySQL\Query\MySQLUpdateQueryWithTagger.php" line-rate="0" branch-rate="0" complexity="0">
+          <methods/>
+          <lines/>
+        </class>
+      </classes>
+    </package>
+    <package name="Exception\NotImplemented.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes>
+        <class name="SquidIT\Cycle\Sql\Tagger\Exception\NotImplemented" filename="src/Exception\NotImplemented.php" line-rate="0" branch-rate="0" complexity="0">
+          <methods/>
+          <lines/>
+        </class>
+      </classes>
+    </package>
+    <package name="Exception\SqlTaggerException.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes>
+        <class name="SquidIT\Cycle\Sql\Tagger\Exception\SqlTaggerException" filename="src/Exception\SqlTaggerException.php" line-rate="0" branch-rate="0" complexity="0">
+          <methods/>
+          <lines/>
+        </class>
+      </classes>
+    </package>
+    <package name="Interface\WithTaggerInterface.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes/>
+    </package>
+    <package name="Trait\SQLStatementWithTagTrait.php" line-rate="1" branch-rate="0" complexity="2">
+      <classes>
+        <class name="SquidIT\Cycle\Sql\Tagger\Trait\SQLStatementWithTagTrait" filename="src/Trait\SQLStatementWithTagTrait.php" line-rate="1" branch-rate="0" complexity="2">
+          <methods>
+            <method name="sqlStatement" signature="?Cycle\Database\Query\QueryParameters $parameters" line-rate="1" branch-rate="0" complexity="2">
+              <lines>
+                <line number="18" hits="5"/>
+                <line number="21" hits="5"/>
+                <line number="22" hits="5"/>
+                <line number="23" hits="5"/>
+                <line number="24" hits="5"/>
+                <line number="25" hits="5"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="18" hits="5"/>
+            <line number="21" hits="5"/>
+            <line number="22" hits="5"/>
+            <line number="23" hits="5"/>
+            <line number="24" hits="5"/>
+            <line number="25" hits="5"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Trait\WithTaggerTrait.php" line-rate="1" branch-rate="0" complexity="9">
+      <classes>
+        <class name="SquidIT\Cycle\Sql\Tagger\Trait\WithTaggerTrait" filename="src/Trait\WithTaggerTrait.php" line-rate="1" branch-rate="0" complexity="9">
+          <methods>
+            <method name="tagQueryWithComment" signature="array|string $comment" line-rate="1" branch-rate="0" complexity="5">
+              <lines>
+                <line number="20" hits="8"/>
+                <line number="21" hits="7"/>
+                <line number="24" hits="8"/>
+                <line number="26" hits="8"/>
+                <line number="27" hits="8"/>
+                <line number="29" hits="8"/>
+                <line number="30" hits="1"/>
+                <line number="33" hits="8"/>
+                <line number="36" hits="8"/>
+                <line number="37" hits="8"/>
+                <line number="40" hits="8"/>
+              </lines>
+            </method>
+            <method name="createSqlComment" signature="" line-rate="1" branch-rate="0" complexity="3">
+              <lines>
+                <line number="45" hits="9"/>
+                <line number="46" hits="2"/>
+                <line number="49" hits="7"/>
+                <line number="51" hits="7"/>
+                <line number="52" hits="6"/>
+                <line number="54" hits="1"/>
+                <line number="55" hits="1"/>
+                <line number="56" hits="1"/>
+                <line number="57" hits="1"/>
+                <line number="59" hits="1"/>
+                <line number="60" hits="1"/>
+                <line number="62" hits="1"/>
+                <line number="65" hits="7"/>
+              </lines>
+            </method>
+            <method name="getTimestamp" signature="" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="70" hits="7"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="20" hits="8"/>
+            <line number="21" hits="7"/>
+            <line number="24" hits="8"/>
+            <line number="26" hits="8"/>
+            <line number="27" hits="8"/>
+            <line number="29" hits="8"/>
+            <line number="30" hits="1"/>
+            <line number="33" hits="8"/>
+            <line number="36" hits="8"/>
+            <line number="37" hits="8"/>
+            <line number="40" hits="8"/>
+            <line number="45" hits="9"/>
+            <line number="46" hits="2"/>
+            <line number="49" hits="7"/>
+            <line number="51" hits="7"/>
+            <line number="52" hits="6"/>
+            <line number="54" hits="1"/>
+            <line number="55" hits="1"/>
+            <line number="56" hits="1"/>
+            <line number="57" hits="1"/>
+            <line number="59" hits="1"/>
+            <line number="60" hits="1"/>
+            <line number="62" hits="1"/>
+            <line number="65" hits="7"/>
+            <line number="70" hits="7"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>

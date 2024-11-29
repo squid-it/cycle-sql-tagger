@@ -1,0 +1,76 @@
+{
+  "name": "squidit/cycle-sql-tagger",
+  "description": "Tag SQL queries by placing a SQL comment",
+  "license": "MIT",
+  "type": "library",
+  "keywords": [
+    "cycle",
+    "database",
+    "dbal",
+    "sql",
+    "comment",
+    "tag",
+    "observability"
+  ],
+  "authors": [
+    {
+      "name": "Cecil Zorg",
+      "email": "developer@squidit.nl"
+    }
+  ],
+  "config": {
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "SquidIT\\Cycle\\Sql\\Tagger\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "SquidIT\\Tests\\Cycle\\Sql\\Tagger\\": "tests"
+    }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/squid-it/php-coding-standards.git"
+    }
+  ],
+  "require": {
+    "php": "^8.3",
+    "cycle/database": "^2.3"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.55",
+    "phpstan/phpstan": "^2.0",
+    "phpunit/phpunit": "^11.4",
+    "squidit/php-coding-standards": "^2.0",
+    "ext-pdo": "*"
+  },
+  "scripts": {
+    "analyse": "phpstan analyse -l 8 src tests",
+    "cs:fix": "php-cs-fixer fix",
+    "cs:dry-run": "php-cs-fixer fix -v --dry-run",
+    "fix": [
+      "@cs:fix",
+      "@analyse",
+      "@test:unit:coverage"
+    ],
+    "test:unit": "phpunit --testsuite unit",
+    "test:unit:coverage": [
+      "@putenv XDEBUG_MODE=coverage",
+      "phpunit --testsuite unit --coverage-cobertura coverage/coverage.xml",
+      "@test:coverage:remove-source"
+    ],
+    "test:unit:coverage-text": [
+      "@putenv XDEBUG_MODE=coverage",
+      "phpunit --testsuite unit --coverage-text"
+    ],
+    "test:coverage:remove-source": [
+      "perl -0777 -i -pe \"s@<sources>.*</sources>@@sg\" ./coverage/coverage.xml",
+      "perl -i -pe 's/filename=\"/filename=\"src\\//gs' ./coverage/coverage.xml",
+      "perl -i -pe 's/ timestamp=\"\\d+\"//gs' ./coverage/coverage.xml"
+    ]
+  }
+}
