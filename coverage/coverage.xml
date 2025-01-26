@@ -109,166 +109,166 @@
           <methods>
             <method name="__construct" signature="Cycle\Database\DatabaseInterface $db" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="35" hits="26"/>
+                <line number="36" hits="26"/>
               </lines>
             </method>
             <method name="getName" signature="" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="39" hits="2"/>
+                <line number="40" hits="2"/>
               </lines>
             </method>
             <method name="getType" signature="" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="44" hits="1"/>
+                <line number="45" hits="1"/>
               </lines>
             </method>
             <method name="getDriver" signature="int $type" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="49" hits="1"/>
+                <line number="50" hits="1"/>
               </lines>
             </method>
             <method name="withPrefix" signature="string $prefix, bool $add" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="57" hits="1"/>
+                <line number="58" hits="1"/>
               </lines>
             </method>
             <method name="getPrefix" signature="" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="62" hits="1"/>
+                <line number="63" hits="1"/>
               </lines>
             </method>
             <method name="hasTable" signature="string $name" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="67" hits="1"/>
+                <line number="68" hits="1"/>
               </lines>
             </method>
             <method name="getTables" signature="" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="72" hits="1"/>
+                <line number="73" hits="1"/>
               </lines>
             </method>
             <method name="table" signature="string $name" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="77" hits="1"/>
+                <line number="78" hits="1"/>
               </lines>
             </method>
             <method name="execute" signature="string $query, array $parameters" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="85" hits="1"/>
                 <line number="86" hits="1"/>
-                <line number="88" hits="1"/>
+                <line number="87" hits="1"/>
+                <line number="89" hits="1"/>
               </lines>
             </method>
             <method name="query" signature="string $query, array $parameters" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="96" hits="3"/>
                 <line number="97" hits="3"/>
-                <line number="99" hits="3"/>
+                <line number="98" hits="3"/>
+                <line number="100" hits="3"/>
               </lines>
             </method>
             <method name="insert" signature="string $table" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="105" hits="1"/>
-                <line number="107" hits="1"/>
+                <line number="109" hits="1"/>
+                <line number="111" hits="1"/>
               </lines>
             </method>
             <method name="update" signature="string $table, array $values, array $where" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="113" hits="1"/>
-                <line number="115" hits="1"/>
+                <line number="120" hits="1"/>
+                <line number="122" hits="1"/>
               </lines>
             </method>
             <method name="delete" signature="string $table, array $where" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="121" hits="2"/>
-                <line number="123" hits="2"/>
+                <line number="131" hits="2"/>
+                <line number="133" hits="2"/>
               </lines>
             </method>
             <method name="select" signature="$columns" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="129" hits="2"/>
-                <line number="131" hits="2"/>
+                <line number="142" hits="2"/>
+                <line number="144" hits="2"/>
               </lines>
             </method>
             <method name="transaction" signature="callable $callback, ?string $isolationLevel" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="138" hits="1"/>
+                <line number="151" hits="1"/>
               </lines>
             </method>
             <method name="begin" signature="?string $isolationLevel" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="143" hits="1"/>
+                <line number="156" hits="1"/>
               </lines>
             </method>
             <method name="commit" signature="" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="148" hits="1"/>
+                <line number="161" hits="1"/>
               </lines>
             </method>
             <method name="rollback" signature="" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="153" hits="1"/>
+                <line number="166" hits="1"/>
               </lines>
             </method>
             <method name="__get" signature="string $name" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="163" hits="1"/>
+                <line number="176" hits="1"/>
               </lines>
             </method>
             <method name="addTag" signature="Cycle\Database\Query\QueryInterface $query" line-rate="1" branch-rate="0" complexity="3">
               <lines>
-                <line number="175" hits="6"/>
-                <line number="176" hits="1"/>
-                <line number="179" hits="5"/>
-                <line number="181" hits="5"/>
-                <line number="182" hits="1"/>
-                <line number="183" hits="1"/>
-                <line number="184" hits="1"/>
-                <line number="188" hits="4"/>
-                <line number="189" hits="4"/>
-                <line number="191" hits="4"/>
+                <line number="188" hits="6"/>
+                <line number="189" hits="1"/>
+                <line number="192" hits="5"/>
+                <line number="194" hits="5"/>
+                <line number="195" hits="1"/>
+                <line number="196" hits="1"/>
+                <line number="197" hits="1"/>
+                <line number="201" hits="4"/>
+                <line number="202" hits="4"/>
+                <line number="204" hits="4"/>
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="35" hits="26"/>
-            <line number="39" hits="2"/>
-            <line number="44" hits="1"/>
-            <line number="49" hits="1"/>
-            <line number="57" hits="1"/>
-            <line number="62" hits="1"/>
-            <line number="67" hits="1"/>
-            <line number="72" hits="1"/>
-            <line number="77" hits="1"/>
-            <line number="85" hits="1"/>
+            <line number="36" hits="26"/>
+            <line number="40" hits="2"/>
+            <line number="45" hits="1"/>
+            <line number="50" hits="1"/>
+            <line number="58" hits="1"/>
+            <line number="63" hits="1"/>
+            <line number="68" hits="1"/>
+            <line number="73" hits="1"/>
+            <line number="78" hits="1"/>
             <line number="86" hits="1"/>
-            <line number="88" hits="1"/>
-            <line number="96" hits="3"/>
+            <line number="87" hits="1"/>
+            <line number="89" hits="1"/>
             <line number="97" hits="3"/>
-            <line number="99" hits="3"/>
-            <line number="105" hits="1"/>
-            <line number="107" hits="1"/>
-            <line number="113" hits="1"/>
-            <line number="115" hits="1"/>
-            <line number="121" hits="2"/>
-            <line number="123" hits="2"/>
-            <line number="129" hits="2"/>
+            <line number="98" hits="3"/>
+            <line number="100" hits="3"/>
+            <line number="109" hits="1"/>
+            <line number="111" hits="1"/>
+            <line number="120" hits="1"/>
+            <line number="122" hits="1"/>
             <line number="131" hits="2"/>
-            <line number="138" hits="1"/>
-            <line number="143" hits="1"/>
-            <line number="148" hits="1"/>
-            <line number="153" hits="1"/>
-            <line number="163" hits="1"/>
-            <line number="175" hits="6"/>
+            <line number="133" hits="2"/>
+            <line number="142" hits="2"/>
+            <line number="144" hits="2"/>
+            <line number="151" hits="1"/>
+            <line number="156" hits="1"/>
+            <line number="161" hits="1"/>
+            <line number="166" hits="1"/>
             <line number="176" hits="1"/>
-            <line number="179" hits="5"/>
-            <line number="181" hits="5"/>
-            <line number="182" hits="1"/>
-            <line number="183" hits="1"/>
-            <line number="184" hits="1"/>
-            <line number="188" hits="4"/>
-            <line number="189" hits="4"/>
-            <line number="191" hits="4"/>
+            <line number="188" hits="6"/>
+            <line number="189" hits="1"/>
+            <line number="192" hits="5"/>
+            <line number="194" hits="5"/>
+            <line number="195" hits="1"/>
+            <line number="196" hits="1"/>
+            <line number="197" hits="1"/>
+            <line number="201" hits="4"/>
+            <line number="202" hits="4"/>
+            <line number="204" hits="4"/>
           </lines>
         </class>
       </classes>

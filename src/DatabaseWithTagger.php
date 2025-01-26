@@ -8,6 +8,7 @@ use Cycle\Database\DatabaseInterface;
 use Cycle\Database\Driver\DriverInterface;
 use Cycle\Database\Query\QueryInterface;
 use Cycle\Database\StatementInterface;
+use Cycle\Database\Table;
 use Cycle\Database\TableInterface;
 use DateTimeInterface;
 use SquidIT\Cycle\Sql\Tagger\Driver\MySQL\Query\InsertQueryWithTagger;
@@ -72,9 +73,9 @@ class DatabaseWithTagger implements DatabaseInterface, WithTaggerInterface
         return $this->db->getTables();
     }
 
-    public function table(string $name): TableInterface
+    public function table(string $name): Table
     {
-        return $this->db->table($name);
+        return new Table($this->db, $name);
     }
 
     /**
@@ -99,6 +100,9 @@ class DatabaseWithTagger implements DatabaseInterface, WithTaggerInterface
         return $this->db->query($query, $parameters);
     }
 
+    /**
+     * @throws SqlTaggerException
+     */
     public function insert(string $table = ''): InsertQueryWithTagger
     {
         /** @var InsertQueryWithTagger $insertQuery */
@@ -107,6 +111,9 @@ class DatabaseWithTagger implements DatabaseInterface, WithTaggerInterface
         return $this->addTag($insertQuery);
     }
 
+    /**
+     * @throws SqlTaggerException
+     */
     public function update(string $table = '', array $values = [], array $where = []): MySQLUpdateQueryWithTagger
     {
         /** @var MySQLUpdateQueryWithTagger $updateQuery */
@@ -115,6 +122,9 @@ class DatabaseWithTagger implements DatabaseInterface, WithTaggerInterface
         return $this->addTag($updateQuery);
     }
 
+    /**
+     * @throws SqlTaggerException
+     */
     public function delete(string $table = '', array $where = []): MySQLDeleteQueryWithTagger
     {
         /** @var MySQLDeleteQueryWithTagger $deleteQuery */
@@ -123,6 +133,9 @@ class DatabaseWithTagger implements DatabaseInterface, WithTaggerInterface
         return $this->addTag($deleteQuery);
     }
 
+    /**
+     * @throws SqlTaggerException
+     */
     public function select($columns = '*'): MySQLSelectQueryWithTagger
     {
         /** @var MySQLSelectQueryWithTagger $selectQuery */

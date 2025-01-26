@@ -317,17 +317,10 @@ class DatabaseWithTaggerTest extends TestCase
      */
     public function testTableReturnsTableInterface(): void
     {
-        $table     = $this->createMock(TableInterface::class);
         $tableName = 'table';
 
-        $this->database
-            ->expects(self::once())
-            ->method('table')
-            ->with($tableName)
-            ->willReturn($table);
-
         $db = new DatabaseWithTagger($this->database);
-        self::assertSame($table, $db->table($tableName));
+        self::assertInstanceOf(TableInterface::class, $db->table($tableName));
     }
 
     /**
