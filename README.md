@@ -24,10 +24,10 @@ use SquidIT\Cycle\Sql\Tagger\DatabaseManagerWithTagger;
 use SquidIT\Cycle\Sql\Tagger\DatabaseWithTagger;
 
 /**
- * Set up your cycle/database database configuration
+ * Set up your cycle/database configuration
  * 
- * Make sure you select the following driver
- * driver: SquidIT\Cycle\Sql\Tagger\Driver\MySQL\MySQLTagDriver::class,
+ * Make sure you select the following driver: 
+ * SquidIT\Cycle\Sql\Tagger\Driver\MySQL\MySQLTagDriver::class
  */
 /** @var DatabaseConfig $dbConfig */
 $dbConfig = new Config\DatabaseConfig([

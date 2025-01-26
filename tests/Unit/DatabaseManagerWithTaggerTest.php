@@ -67,6 +67,9 @@ class DatabaseManagerWithTaggerTest extends TestCase
         self::assertInstanceOf(MySQLTagDriver::class, $dbal->driver(self::DRIVER_NAME));
     }
 
+    /**
+     * @throws Throwable
+     */
     public function testSetLoggerWillSetLoggerOnPreviouslyDefinedDrivers(): void
     {
         $logger = $this->createMock(LoggerInterface::class);
