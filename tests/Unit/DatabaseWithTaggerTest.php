@@ -18,6 +18,7 @@ use SquidIT\Cycle\Sql\Tagger\Driver\MySQL\Query\MySQLSelectQueryWithTagger;
 use SquidIT\Cycle\Sql\Tagger\Driver\MySQL\Query\MySQLUpdateQueryWithTagger;
 use SquidIT\Cycle\Sql\Tagger\Exception\NotImplemented;
 use SquidIT\Cycle\Sql\Tagger\Exception\SqlTaggerException;
+use SquidIT\Cycle\Sql\Tagger\TableWithTagger;
 use SquidIT\Tests\Cycle\Sql\Tagger\Database\DatabaseConfig;
 use Throwable;
 
@@ -328,19 +329,11 @@ class DatabaseWithTaggerTest extends TestCase
      */
     public function testTableMagicMethodReturnsTableInterface(): void
     {
-        $table     = $this->createMock(TableInterface::class);
         $tableName = 'table';
-
-        $this->database
-            ->expects(self::once())
-            ->method('table')
-            ->with($tableName)
-            ->willReturn($table);
-
-        $db = new DatabaseWithTagger($this->database);
+        $db        = new DatabaseWithTagger($this->database);
 
         /** @phpstan-ignore property.notFound */
-        self::assertSame($table, $db->{$tableName});
+        self::assertInstanceOf(TableWithTagger::class, $db->{$tableName});
     }
 
     /**

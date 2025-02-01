@@ -9,7 +9,6 @@ use Cycle\Database\Driver\DriverInterface;
 use Cycle\Database\Query\QueryInterface;
 use Cycle\Database\StatementInterface;
 use Cycle\Database\Table;
-use Cycle\Database\TableInterface;
 use DateTimeInterface;
 use SquidIT\Cycle\Sql\Tagger\Driver\MySQL\Query\InsertQueryWithTagger;
 use SquidIT\Cycle\Sql\Tagger\Driver\MySQL\Query\MySQLDeleteQueryWithTagger;
@@ -73,9 +72,9 @@ class DatabaseWithTagger implements DatabaseInterface, WithTaggerInterface
         return $this->db->getTables();
     }
 
-    public function table(string $name): Table
+    public function table(string $name): TableWithTagger
     {
-        return new Table($this->db, $name);
+        return new TableWithTagger($this, $name);
     }
 
     /**
@@ -171,9 +170,9 @@ class DatabaseWithTagger implements DatabaseInterface, WithTaggerInterface
      *
      * @psalm-param non-empty-string $name Table name without prefix.
      */
-    public function __get(string $name): TableInterface
+    public function __get(string $name): TableWithTagger
     {
-        return $this->db->table($name);
+        return $this->table($name);
     }
 
     /**
@@ -182,6 +181,8 @@ class DatabaseWithTagger implements DatabaseInterface, WithTaggerInterface
      * @phpstan-param T $query
      *
      * @phpstan-return T
+     *
+     * @throws SqlTaggerException
      */
     private function addTag(QueryInterface $query): QueryInterface
     {

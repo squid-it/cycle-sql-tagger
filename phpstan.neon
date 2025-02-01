@@ -6,6 +6,8 @@ parameters:
 	ignoreErrors:
 	    - identifier: missingType.iterableValue
 
+	    - identifier: missingType.generics
+
 	    - message: '#^Parameter .*$#'
 	      identifier: argument.type
 	      path: src/DatabaseManagerWithTagger.php
