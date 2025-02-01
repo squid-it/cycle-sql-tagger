@@ -39,6 +39,16 @@ class TableWithTagger implements TableInterface, IteratorAggregate, Countable
     ) {}
 
     /**
+     * @param array<int|string, string>|string $comment
+     */
+    public function tagQueryWithComment(array|string $comment): static
+    {
+        $this->database->tagQueryWithComment($comment);
+
+        return $this;
+    }
+
+    /**
      * Get an associated database.
      */
     public function getDatabase(): DatabaseWithTagger

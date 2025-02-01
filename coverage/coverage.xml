@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="0.71698113207547" branch-rate="0" lines-covered="114" lines-valid="159" branches-covered="0" branches-valid="0" complexity="77" version="0.4">
+<coverage line-rate="0.70807453416149" branch-rate="0" lines-covered="114" lines-valid="161" branches-covered="0" branches-valid="0" complexity="78" version="0.4">
   
   <packages>
     <package name="DatabaseManagerWithTagger.php" line-rate="1" branch-rate="0" complexity="16">
@@ -360,204 +360,212 @@
     <package name="Interface\WithTaggerInterface.php" line-rate="0" branch-rate="0" complexity="0">
       <classes/>
     </package>
-    <package name="TableWithTagger.php" line-rate="0.021739130434783" branch-rate="0" complexity="26">
+    <package name="TableWithTagger.php" line-rate="0.020833333333333" branch-rate="0" complexity="27">
       <classes>
-        <class name="SquidIT\Cycle\Sql\Tagger\TableWithTagger" filename="src/TableWithTagger.php" line-rate="0.021739130434783" branch-rate="0" complexity="26">
+        <class name="SquidIT\Cycle\Sql\Tagger\TableWithTagger" filename="src/TableWithTagger.php" line-rate="0.020833333333333" branch-rate="0" complexity="27">
           <methods>
             <method name="__construct" signature="SquidIT\Cycle\Sql\Tagger\DatabaseWithTagger $database, string $name" line-rate="1" branch-rate="0" complexity="1">
               <lines>
                 <line number="39" hits="2"/>
               </lines>
             </method>
-            <method name="getDatabase" signature="" line-rate="0" branch-rate="0" complexity="1">
+            <method name="tagQueryWithComment" signature="array|string $comment" line-rate="0" branch-rate="0" complexity="1">
               <lines>
                 <line number="46" hits="0"/>
+                <line number="48" hits="0"/>
               </lines>
             </method>
-            <method name="getFullName" signature="" line-rate="0" branch-rate="0" complexity="1">
+            <method name="getDatabase" signature="" line-rate="0" branch-rate="0" complexity="1">
               <lines>
                 <line number="56" hits="0"/>
               </lines>
             </method>
+            <method name="getFullName" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="66" hits="0"/>
+              </lines>
+            </method>
             <method name="getName" signature="" line-rate="0" branch-rate="0" complexity="1">
               <lines>
-                <line number="64" hits="0"/>
+                <line number="74" hits="0"/>
               </lines>
             </method>
             <method name="getSchema" signature="" line-rate="0" branch-rate="0" complexity="1">
               <lines>
-                <line number="72" hits="0"/>
-                <line number="73" hits="0"/>
-                <line number="74" hits="0"/>
-                <line number="75" hits="0"/>
-                <line number="76" hits="0"/>
-                <line number="77" hits="0"/>
-                <line number="78" hits="0"/>
+                <line number="82" hits="0"/>
+                <line number="83" hits="0"/>
+                <line number="84" hits="0"/>
+                <line number="85" hits="0"/>
+                <line number="86" hits="0"/>
+                <line number="87" hits="0"/>
+                <line number="88" hits="0"/>
               </lines>
             </method>
             <method name="eraseData" signature="" line-rate="0" branch-rate="0" complexity="1">
               <lines>
-                <line number="86" hits="0"/>
-                <line number="87" hits="0"/>
-                <line number="88" hits="0"/>
-                <line number="89" hits="0"/>
+                <line number="96" hits="0"/>
+                <line number="97" hits="0"/>
+                <line number="98" hits="0"/>
+                <line number="99" hits="0"/>
               </lines>
             </method>
             <method name="insertOne" signature="array $rowset" line-rate="0" branch-rate="0" complexity="1">
               <lines>
-                <line number="104" hits="0"/>
-                <line number="105" hits="0"/>
-                <line number="106" hits="0"/>
-                <line number="107" hits="0"/>
+                <line number="114" hits="0"/>
+                <line number="115" hits="0"/>
+                <line number="116" hits="0"/>
+                <line number="117" hits="0"/>
               </lines>
             </method>
             <method name="insertMultiple" signature="array $columns, array $rowsets" line-rate="0" branch-rate="0" complexity="1">
               <lines>
-                <line number="125" hits="0"/>
-                <line number="126" hits="0"/>
-                <line number="127" hits="0"/>
-                <line number="128" hits="0"/>
-                <line number="129" hits="0"/>
+                <line number="135" hits="0"/>
+                <line number="136" hits="0"/>
+                <line number="137" hits="0"/>
+                <line number="138" hits="0"/>
+                <line number="139" hits="0"/>
               </lines>
             </method>
             <method name="insert" signature="" line-rate="0" branch-rate="0" complexity="1">
               <lines>
-                <line number="139" hits="0"/>
-                <line number="140" hits="0"/>
+                <line number="149" hits="0"/>
+                <line number="150" hits="0"/>
               </lines>
             </method>
             <method name="select" signature="mixed $columns" line-rate="0" branch-rate="0" complexity="2">
               <lines>
-                <line number="151" hits="0"/>
-                <line number="152" hits="0"/>
-                <line number="153" hits="0"/>
+                <line number="161" hits="0"/>
+                <line number="162" hits="0"/>
+                <line number="163" hits="0"/>
               </lines>
             </method>
             <method name="delete" signature="array $where" line-rate="0" branch-rate="0" complexity="1">
               <lines>
-                <line number="167" hits="0"/>
-                <line number="168" hits="0"/>
+                <line number="177" hits="0"/>
+                <line number="178" hits="0"/>
               </lines>
             </method>
             <method name="update" signature="array $values, array $where" line-rate="0" branch-rate="0" complexity="1">
               <lines>
-                <line number="182" hits="0"/>
-                <line number="183" hits="0"/>
+                <line number="192" hits="0"/>
+                <line number="193" hits="0"/>
               </lines>
             </method>
             <method name="count" signature="" line-rate="0" branch-rate="0" complexity="1">
               <lines>
-                <line number="193" hits="0"/>
+                <line number="203" hits="0"/>
               </lines>
             </method>
             <method name="getIterator" signature="" line-rate="0" branch-rate="0" complexity="1">
               <lines>
-                <line number="205" hits="0"/>
+                <line number="215" hits="0"/>
               </lines>
             </method>
             <method name="fetchAll" signature="" line-rate="0" branch-rate="0" complexity="1">
               <lines>
-                <line number="215" hits="0"/>
+                <line number="225" hits="0"/>
               </lines>
             </method>
             <method name="exists" signature="" line-rate="0" branch-rate="0" complexity="1">
               <lines>
-                <line number="220" hits="0"/>
+                <line number="230" hits="0"/>
               </lines>
             </method>
             <method name="getPrimaryKeys" signature="" line-rate="0" branch-rate="0" complexity="1">
               <lines>
-                <line number="229" hits="0"/>
+                <line number="239" hits="0"/>
               </lines>
             </method>
             <method name="hasColumn" signature="string $name" line-rate="0" branch-rate="0" complexity="1">
               <lines>
-                <line number="239" hits="0"/>
+                <line number="249" hits="0"/>
               </lines>
             </method>
             <method name="getColumns" signature="" line-rate="0" branch-rate="0" complexity="1">
               <lines>
-                <line number="249" hits="0"/>
+                <line number="259" hits="0"/>
               </lines>
             </method>
             <method name="hasIndex" signature="array $columns" line-rate="0" branch-rate="0" complexity="1">
               <lines>
-                <line number="257" hits="0"/>
+                <line number="267" hits="0"/>
               </lines>
             </method>
             <method name="getIndexes" signature="" line-rate="0" branch-rate="0" complexity="1">
               <lines>
-                <line number="267" hits="0"/>
+                <line number="277" hits="0"/>
               </lines>
             </method>
             <method name="hasForeignKey" signature="array $columns" line-rate="0" branch-rate="0" complexity="1">
               <lines>
-                <line number="277" hits="0"/>
+                <line number="287" hits="0"/>
               </lines>
             </method>
             <method name="getForeignKeys" signature="" line-rate="0" branch-rate="0" complexity="1">
               <lines>
-                <line number="287" hits="0"/>
+                <line number="297" hits="0"/>
               </lines>
             </method>
             <method name="getDependencies" signature="" line-rate="0" branch-rate="0" complexity="1">
               <lines>
-                <line number="296" hits="0"/>
+                <line number="306" hits="0"/>
               </lines>
             </method>
             <method name="__call" signature="string $method, array $arguments" line-rate="0" branch-rate="0" complexity="1">
               <lines>
-                <line number="311" hits="0"/>
+                <line number="321" hits="0"/>
               </lines>
             </method>
           </methods>
           <lines>
             <line number="39" hits="2"/>
             <line number="46" hits="0"/>
+            <line number="48" hits="0"/>
             <line number="56" hits="0"/>
-            <line number="64" hits="0"/>
-            <line number="72" hits="0"/>
-            <line number="73" hits="0"/>
+            <line number="66" hits="0"/>
             <line number="74" hits="0"/>
-            <line number="75" hits="0"/>
-            <line number="76" hits="0"/>
-            <line number="77" hits="0"/>
-            <line number="78" hits="0"/>
+            <line number="82" hits="0"/>
+            <line number="83" hits="0"/>
+            <line number="84" hits="0"/>
+            <line number="85" hits="0"/>
             <line number="86" hits="0"/>
             <line number="87" hits="0"/>
             <line number="88" hits="0"/>
-            <line number="89" hits="0"/>
-            <line number="104" hits="0"/>
-            <line number="105" hits="0"/>
-            <line number="106" hits="0"/>
-            <line number="107" hits="0"/>
-            <line number="125" hits="0"/>
-            <line number="126" hits="0"/>
-            <line number="127" hits="0"/>
-            <line number="128" hits="0"/>
-            <line number="129" hits="0"/>
+            <line number="96" hits="0"/>
+            <line number="97" hits="0"/>
+            <line number="98" hits="0"/>
+            <line number="99" hits="0"/>
+            <line number="114" hits="0"/>
+            <line number="115" hits="0"/>
+            <line number="116" hits="0"/>
+            <line number="117" hits="0"/>
+            <line number="135" hits="0"/>
+            <line number="136" hits="0"/>
+            <line number="137" hits="0"/>
+            <line number="138" hits="0"/>
             <line number="139" hits="0"/>
-            <line number="140" hits="0"/>
-            <line number="151" hits="0"/>
-            <line number="152" hits="0"/>
-            <line number="153" hits="0"/>
-            <line number="167" hits="0"/>
-            <line number="168" hits="0"/>
-            <line number="182" hits="0"/>
-            <line number="183" hits="0"/>
+            <line number="149" hits="0"/>
+            <line number="150" hits="0"/>
+            <line number="161" hits="0"/>
+            <line number="162" hits="0"/>
+            <line number="163" hits="0"/>
+            <line number="177" hits="0"/>
+            <line number="178" hits="0"/>
+            <line number="192" hits="0"/>
             <line number="193" hits="0"/>
-            <line number="205" hits="0"/>
+            <line number="203" hits="0"/>
             <line number="215" hits="0"/>
-            <line number="220" hits="0"/>
-            <line number="229" hits="0"/>
+            <line number="225" hits="0"/>
+            <line number="230" hits="0"/>
             <line number="239" hits="0"/>
             <line number="249" hits="0"/>
-            <line number="257" hits="0"/>
+            <line number="259" hits="0"/>
             <line number="267" hits="0"/>
             <line number="277" hits="0"/>
             <line number="287" hits="0"/>
-            <line number="296" hits="0"/>
-            <line number="311" hits="0"/>
+            <line number="297" hits="0"/>
+            <line number="306" hits="0"/>
+            <line number="321" hits="0"/>
           </lines>
         </class>
       </classes>
