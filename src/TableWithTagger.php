@@ -108,12 +108,12 @@ class TableWithTagger implements TableInterface, IteratorAggregate, Countable
      * @throws BuilderException
      * @throws SqlTaggerException
      */
-    public function insertOne(array $rowset = []): int|string|null
+    public function insertOne(array $rowSet = []): int|string|null
     {
         /** @phpstan-ignore return.type */
         return $this->database
             ->insert($this->name)
-            ->values($rowset)
+            ->values($rowSet)
             ->run();
     }
 
@@ -125,17 +125,17 @@ class TableWithTagger implements TableInterface, IteratorAggregate, Countable
      * $table->insertMultiple(["name", "balance"], array(["Bob", 10], ["Jack", 20]))
      *
      * @param array $columns Array of columns.
-     * @param array $rowsets Array of rowsets.
+     * @param array $rowSets Array of rowsets.
      *
      * @throws SqlTaggerException
      */
-    public function insertMultiple(array $columns = [], array $rowsets = []): void
+    public function insertMultiple(array $columns = [], array $rowSets = []): void
     {
         // No return value
         $this->database
             ->insert($this->name)
             ->columns($columns)
-            ->values($rowsets)
+            ->values($rowSets)
             ->run();
     }
 

@@ -12,4 +12,15 @@ class MySQLDeleteQueryWithTagger extends MySQLDeleteQuery
 {
     use WithTaggerTrait;
     use SQLStatementWithTagTrait;
+
+    /**
+     * Alias for execute method();
+     */
+    public function run(): int
+    {
+        $int           = parent::run();
+        $this->comment = null;
+
+        return $int;
+    }
 }

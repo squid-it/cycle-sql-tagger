@@ -12,4 +12,15 @@ class MySQLUpdateQueryWithTagger extends MySQLUpdateQuery
 {
     use WithTaggerTrait;
     use SQLStatementWithTagTrait;
+
+    /**
+     * Affect queries will return count of affected rows.
+     */
+    public function run(): int
+    {
+        $int           = parent::run();
+        $this->comment = null;
+
+        return $int;
+    }
 }
