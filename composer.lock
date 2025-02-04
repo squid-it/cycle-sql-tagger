@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5eaf5ac01537aced7679208026d1db00",
+    "content-hash": "3e278595c9fc3dd3c8a1eefd83816aed",
     "packages": [
         {
             "name": "cycle/database",
@@ -254,30 +254,30 @@
         },
         {
             "name": "spiral/core",
-            "version": "3.15.0",
+            "version": "3.15.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spiral/core.git",
-                "reference": "7f7190af154d0952785dc72f4c6ed72e9c3e91b8"
+                "reference": "ebb5b4eddfe7c8df2bf1bd0e6767a779f37f45bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spiral/core/zipball/7f7190af154d0952785dc72f4c6ed72e9c3e91b8",
-                "reference": "7f7190af154d0952785dc72f4c6ed72e9c3e91b8",
+                "url": "https://api.github.com/repos/spiral/core/zipball/ebb5b4eddfe7c8df2bf1bd0e6767a779f37f45bc",
+                "reference": "ebb5b4eddfe7c8df2bf1bd0e6767a779f37f45bc",
                 "shasum": ""
             },
             "require": {
                 "php": ">=8.1",
                 "psr/container": "^1.1|^2.0",
-                "spiral/security": "^3.15"
+                "spiral/security": "^3.15.1"
             },
             "provide": {
                 "psr/container-implementation": "^1.1|^2.0"
             },
             "require-dev": {
-                "mockery/mockery": "^1.6",
-                "phpunit/phpunit": "^10.5",
-                "vimeo/psalm": "^5.9"
+                "mockery/mockery": "^1.6.12",
+                "phpunit/phpunit": "^10.5.41",
+                "vimeo/psalm": "^6.0"
             },
             "type": "library",
             "extra": {
@@ -324,32 +324,32 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-01-24T15:39:29+00:00"
+            "time": "2025-01-31T21:51:35+00:00"
         },
         {
             "name": "spiral/hmvc",
-            "version": "3.15.0",
+            "version": "3.15.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spiral/hmvc.git",
-                "reference": "448cf4acccf514d06adb87572987a8d33ada7a5c"
+                "reference": "fdb97a5ef1834b0496e9042a3cf13cc73b32e355"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spiral/hmvc/zipball/448cf4acccf514d06adb87572987a8d33ada7a5c",
-                "reference": "448cf4acccf514d06adb87572987a8d33ada7a5c",
+                "url": "https://api.github.com/repos/spiral/hmvc/zipball/fdb97a5ef1834b0496e9042a3cf13cc73b32e355",
+                "reference": "fdb97a5ef1834b0496e9042a3cf13cc73b32e355",
                 "shasum": ""
             },
             "require": {
                 "php": ">=8.1",
                 "psr/event-dispatcher": "^1.0",
-                "spiral/core": "^3.15",
-                "spiral/interceptors": "^3.15"
+                "spiral/core": "^3.15.1",
+                "spiral/interceptors": "^3.15.1"
             },
             "require-dev": {
-                "phpunit/phpunit": "^10.5",
-                "spiral/testing": "^2.8",
-                "vimeo/psalm": "^5.9"
+                "phpunit/phpunit": "^10.5.41",
+                "spiral/testing": "^2.8.3",
+                "vimeo/psalm": "^6.0"
             },
             "type": "library",
             "extra": {
@@ -398,31 +398,31 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-01-24T15:40:44+00:00"
+            "time": "2025-01-31T21:51:47+00:00"
         },
         {
             "name": "spiral/interceptors",
-            "version": "3.15.0",
+            "version": "3.15.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spiral/interceptors.git",
-                "reference": "ea5934f657c3b5f12c063557252ac39474558257"
+                "reference": "853a69593d4b50e7fbfb7893896dd7b27d446458"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spiral/interceptors/zipball/ea5934f657c3b5f12c063557252ac39474558257",
-                "reference": "ea5934f657c3b5f12c063557252ac39474558257",
+                "url": "https://api.github.com/repos/spiral/interceptors/zipball/853a69593d4b50e7fbfb7893896dd7b27d446458",
+                "reference": "853a69593d4b50e7fbfb7893896dd7b27d446458",
                 "shasum": ""
             },
             "require": {
                 "php": ">=8.1",
                 "psr/event-dispatcher": "^1.0",
-                "spiral/core": "^3.15"
+                "spiral/core": "^3.15.1"
             },
             "require-dev": {
-                "phpunit/phpunit": "^10.5",
-                "spiral/testing": "^2.8",
-                "vimeo/psalm": "^5.9"
+                "phpunit/phpunit": "^10.5.41",
+                "spiral/testing": "^2.8.3",
+                "vimeo/psalm": "^6.0"
             },
             "type": "library",
             "extra": {
@@ -476,29 +476,29 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-01-24T15:40:53+00:00"
+            "time": "2025-01-31T21:51:49+00:00"
         },
         {
             "name": "spiral/pagination",
-            "version": "3.15.0",
+            "version": "3.15.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spiral/pagination.git",
-                "reference": "b7e550b6b6f7690bd09a9ea2d263f363b403507c"
+                "reference": "885aca9311a4d5a78c810d475c0d80d17ee9de5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spiral/pagination/zipball/b7e550b6b6f7690bd09a9ea2d263f363b403507c",
-                "reference": "b7e550b6b6f7690bd09a9ea2d263f363b403507c",
+                "url": "https://api.github.com/repos/spiral/pagination/zipball/885aca9311a4d5a78c810d475c0d80d17ee9de5c",
+                "reference": "885aca9311a4d5a78c810d475c0d80d17ee9de5c",
                 "shasum": ""
             },
             "require": {
                 "php": ">=8.1"
             },
             "require-dev": {
-                "mockery/mockery": "^1.6",
-                "phpunit/phpunit": "^10.5",
-                "vimeo/psalm": "^5.9"
+                "mockery/mockery": "^1.6.12",
+                "phpunit/phpunit": "^10.5.41",
+                "vimeo/psalm": "^6.0"
             },
             "type": "library",
             "extra": {
@@ -545,32 +545,32 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-01-24T15:40:59+00:00"
+            "time": "2025-01-31T21:54:45+00:00"
         },
         {
             "name": "spiral/security",
-            "version": "3.15.0",
+            "version": "3.15.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spiral/security.git",
-                "reference": "a5e333d9519097f35f9c862cacdf6c99e72571d0"
+                "reference": "13248d9f0a9efff5ab1167ac2691a131896aae5f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spiral/security/zipball/a5e333d9519097f35f9c862cacdf6c99e72571d0",
-                "reference": "a5e333d9519097f35f9c862cacdf6c99e72571d0",
+                "url": "https://api.github.com/repos/spiral/security/zipball/13248d9f0a9efff5ab1167ac2691a131896aae5f",
+                "reference": "13248d9f0a9efff5ab1167ac2691a131896aae5f",
                 "shasum": ""
             },
             "require": {
                 "php": ">=8.1",
-                "spiral/core": "^3.15",
-                "spiral/hmvc": "^3.15"
+                "spiral/core": "^3.15.1",
+                "spiral/hmvc": "^3.15.1"
             },
             "require-dev": {
-                "mockery/mockery": "^1.6",
-                "phpunit/phpunit": "^10.5",
-                "spiral/console": "^3.15",
-                "vimeo/psalm": "^5.9"
+                "mockery/mockery": "^1.6.12",
+                "phpunit/phpunit": "^10.5.41",
+                "spiral/console": "^3.15.1",
+                "vimeo/psalm": "^6.0"
             },
             "type": "library",
             "extra": {
@@ -617,7 +617,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-01-24T15:41:05+00:00"
+            "time": "2025-01-31T21:54:57+00:00"
         },
         {
             "name": "symfony/polyfill-php83",
@@ -1097,16 +1097,16 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v3.68.1",
+            "version": "v3.68.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer.git",
-                "reference": "b9db2b2ea3cdba7201067acee46f984ef2397cff"
+                "reference": "7bedb718b633355272428c60736dc97fb96daf27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/b9db2b2ea3cdba7201067acee46f984ef2397cff",
-                "reference": "b9db2b2ea3cdba7201067acee46f984ef2397cff",
+                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/7bedb718b633355272428c60736dc97fb96daf27",
+                "reference": "7bedb718b633355272428c60736dc97fb96daf27",
                 "shasum": ""
             },
             "require": {
@@ -1188,7 +1188,7 @@
             ],
             "support": {
                 "issues": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/issues",
-                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.68.1"
+                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.68.5"
             },
             "funding": [
                 {
@@ -1196,7 +1196,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-01-17T09:20:36+00:00"
+            "time": "2025-01-30T17:00:50+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -1817,16 +1817,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "11.5.3",
+            "version": "11.5.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "30e319e578a7b5da3543073e30002bf82042f701"
+                "reference": "3c3ae14c90f244cdda95028c3e469028e8d1c02c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/30e319e578a7b5da3543073e30002bf82042f701",
-                "reference": "30e319e578a7b5da3543073e30002bf82042f701",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3c3ae14c90f244cdda95028c3e469028e8d1c02c",
+                "reference": "3c3ae14c90f244cdda95028c3e469028e8d1c02c",
                 "shasum": ""
             },
             "require": {
@@ -1898,7 +1898,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.3"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.6"
             },
             "funding": [
                 {
@@ -1914,7 +1914,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-01-13T09:36:00+00:00"
+            "time": "2025-01-31T07:03:30+00:00"
         },
         {
             "name": "react/cache",
@@ -4802,10 +4802,9 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
+        "ext-pdo": "*",
         "php": "^8.3"
     },
-    "platform-dev": {
-        "ext-pdo": "*"
-    },
+    "platform-dev": [],
     "plugin-api-version": "2.6.0"
 }

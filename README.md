@@ -19,7 +19,7 @@ Tagging your queries will help your DBAs in reporting back on slow performing SQ
 
 declare(strict_types=1);
 
-use Cycle\Database\Config\DatabaseConfig;
+use Cycle\Database\Config;
 use SquidIT\Cycle\Sql\Tagger\DatabaseManagerWithTagger;
 use SquidIT\Cycle\Sql\Tagger\DatabaseWithTagger;
 
@@ -43,26 +43,41 @@ $dbConfig = new Config\DatabaseConfig([
 
 $dbal = new DatabaseManagerWithTagger($dbConfig);
 
-/** @var DatabaseWithTagger $database */
 $database = $dbal->database();
 $database->tagQueryWithComment('Filename: file.php, Method: MethodName, LineNr: 10');
 $database->query('SELECT [QUERY]');
 
 // After executing a SQL query the comment is removed
-
 $database->tagQueryWithComment('Filename: file.php, Method: MethodName, LineNr: 10');
 $database->execute('INSERT [QUERY]');
 
 // the following will have the same result
 $database->tagQueryWithComment('Filename: file.php, Method: MethodName, LineNr: 10');
-$selectQuery = $db->select();
+$selectQuery = $database->select();
 $selectQuery->fetchAll();
 
-// or:
+# or:
 
-$selectQuery = $db->select();
+$selectQuery = $database->select();
 $selectQuery->tagQueryWithComment('Filename: file.php, Method: MethodName, LineNr: 10');
 $selectQuery->fetchAll();
+
+// After selecting a table
+$database = $database->database();
+$database->table('tableName')
+    ->tagQueryWithComment([
+        'File: ' . __FILE__,
+        'Line: ' . __LINE__,
+        'Function: ' . __METHOD__
+     ])
+    ->update([
+        'column1' => 'value1',
+        'column2' => 'value2',
+    ])
+    ->where([
+        'comment_id' => ['=' => 1],
+    ])
+    ->run();
 ```
 
 ### Database log output (first example only)
