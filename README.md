@@ -3,8 +3,9 @@
 Cycle Database decorator to add SQL comments to your queries.
 
 ## Features
-* Tag Query & Execute database calls
+* Tag Database query & execute calls
 * Tag All QueryBuilder queries
+* Tag All Direct Table queries 
 * Multi-Line comment support
 
 ## Use Case
@@ -29,7 +30,7 @@ use SquidIT\Cycle\Sql\Tagger\DatabaseWithTagger;
  * Make sure you select the following driver: 
  * SquidIT\Cycle\Sql\Tagger\Driver\MySQL\MySQLTagDriver::class
  */
-/** @var DatabaseConfig $dbConfig */
+
 $dbConfig = new Config\DatabaseConfig([
             ...
             'connections' => [
@@ -47,11 +48,12 @@ $database = $dbal->database();
 $database->tagQueryWithComment('Filename: file.php, Method: MethodName, LineNr: 10');
 $database->query('SELECT [QUERY]');
 
-// After executing a SQL query the comment is removed
+// After executing a SQL query the comment is removed, so we need to set a new comment for a new query
 $database->tagQueryWithComment('Filename: file.php, Method: MethodName, LineNr: 10');
 $database->execute('INSERT [QUERY]');
 
-// the following will have the same result
+// the following two fetch calls will have the same result
+// (it doesn't matter if you call the tagQueryWithComment method on the database or the query builder
 $database->tagQueryWithComment('Filename: file.php, Method: MethodName, LineNr: 10');
 $selectQuery = $database->select();
 $selectQuery->fetchAll();
@@ -62,7 +64,7 @@ $selectQuery = $database->select();
 $selectQuery->tagQueryWithComment('Filename: file.php, Method: MethodName, LineNr: 10');
 $selectQuery->fetchAll();
 
-// After selecting a table
+// After selecting a table, we can also tag the future database call
 $database = $database->database();
 $database->table('tableName')
     ->tagQueryWithComment([
