@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5e460c40afec49b13e8c396997244063",
+    "content-hash": "b5a62b9e3bc544f35888535def3cf77c",
     "packages": [
         {
             "name": "cycle/database",
@@ -5174,7 +5174,7 @@
     "prefer-lowest": false,
     "platform": {
         "ext-pdo": "*",
-        "php": "^8.3"
+        "php": "^8.4"
     },
     "platform-dev": {},
     "plugin-api-version": "2.9.0"
