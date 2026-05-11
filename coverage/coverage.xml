@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 <coverage line-rate="0.67222222222222" branch-rate="0" lines-covered="121" lines-valid="180" branches-covered="0" branches-valid="0" complexity="84" version="0.4">
   
   <packages>
@@ -7,12 +6,12 @@
       <classes>
         <class name="SquidIT\Cycle\Sql\Tagger\DatabaseManagerWithTagger" filename="src/DatabaseManagerWithTagger.php" line-rate="1" branch-rate="0" complexity="16">
           <methods>
-            <method name="__construct" signature="Cycle\Database\Config\DatabaseConfig $config, ?Cycle\Database\LoggerFactoryInterface $loggerFactory" line-rate="1" branch-rate="0" complexity="1">
+            <method name="__construct" signature="DatabaseConfig $config, ?LoggerFactoryInterface $loggerFactory" line-rate="1" branch-rate="0" complexity="1">
               <lines>
                 <line number="31" hits="6"/>
               </lines>
             </method>
-            <method name="setLogger" signature="Psr\Log\LoggerInterface $logger" line-rate="1" branch-rate="0" complexity="3">
+            <method name="setLogger" signature="LoggerInterface $logger" line-rate="1" branch-rate="0" complexity="3">
               <lines>
                 <line number="38" hits="2"/>
                 <line number="41" hits="2"/>
@@ -46,7 +45,7 @@
                 <line number="94" hits="6"/>
               </lines>
             </method>
-            <method name="makeDatabase" signature="Cycle\Database\Config\DatabasePartial $database" line-rate="1" branch-rate="0" complexity="2">
+            <method name="makeDatabase" signature="DatabasePartial $database" line-rate="1" branch-rate="0" complexity="2">
               <lines>
                 <line number="99" hits="3"/>
                 <line number="100" hits="3"/>
@@ -57,7 +56,7 @@
                 <line number="106" hits="3"/>
               </lines>
             </method>
-            <method name="getLoggerForDriver" signature="Cycle\Database\Driver\DriverInterface $driver" line-rate="1" branch-rate="0" complexity="2">
+            <method name="getLoggerForDriver" signature="DriverInterface $driver" line-rate="1" branch-rate="0" complexity="2">
               <lines>
                 <line number="111" hits="6"/>
                 <line number="112" hits="5"/>
@@ -107,7 +106,7 @@
       <classes>
         <class name="SquidIT\Cycle\Sql\Tagger\DatabaseWithTagger" filename="src/DatabaseWithTagger.php" line-rate="1" branch-rate="0" complexity="23">
           <methods>
-            <method name="__construct" signature="Cycle\Database\DatabaseInterface $db" line-rate="1" branch-rate="0" complexity="1">
+            <method name="__construct" signature="DatabaseInterface $db" line-rate="1" branch-rate="0" complexity="1">
               <lines>
                 <line number="35" hits="26"/>
               </lines>
@@ -215,7 +214,7 @@
                 <line number="175" hits="1"/>
               </lines>
             </method>
-            <method name="addTag" signature="Cycle\Database\Query\QueryInterface $query" line-rate="1" branch-rate="0" complexity="3">
+            <method name="addTag" signature="QueryInterface $query" line-rate="1" branch-rate="0" complexity="3">
               <lines>
                 <line number="189" hits="6"/>
                 <line number="190" hits="1"/>
@@ -277,7 +276,7 @@
       <classes>
         <class name="SquidIT\Cycle\Sql\Tagger\Driver\MySQL\MySQLTagDriver" filename="src/Driver\MySQL\MySQLTagDriver.php" line-rate="1" branch-rate="0" complexity="1">
           <methods>
-            <method name="create" signature="Cycle\Database\Config\DriverConfig $config" line-rate="1" branch-rate="0" complexity="1">
+            <method name="create" signature="DriverConfig $config" line-rate="1" branch-rate="0" complexity="1">
               <lines>
                 <line number="21" hits="12"/>
                 <line number="22" hits="12"/>
@@ -412,7 +411,7 @@
       <classes>
         <class name="SquidIT\Cycle\Sql\Tagger\TableWithTagger" filename="src/TableWithTagger.php" line-rate="0.020833333333333" branch-rate="0" complexity="27">
           <methods>
-            <method name="__construct" signature="SquidIT\Cycle\Sql\Tagger\DatabaseWithTagger $database, string $name" line-rate="1" branch-rate="0" complexity="1">
+            <method name="__construct" signature="DatabaseWithTagger $database, string $name" line-rate="1" branch-rate="0" complexity="1">
               <lines>
                 <line number="39" hits="2"/>
               </lines>
@@ -650,7 +649,7 @@
       <classes>
         <class name="SquidIT\Cycle\Sql\Tagger\Trait\SQLStatementWithTagTrait" filename="src/Trait\SQLStatementWithTagTrait.php" line-rate="1" branch-rate="0" complexity="2">
           <methods>
-            <method name="sqlStatement" signature="?Cycle\Database\Query\QueryParameters $parameters" line-rate="1" branch-rate="0" complexity="2">
+            <method name="sqlStatement" signature="?QueryParameters $parameters" line-rate="1" branch-rate="0" complexity="2">
               <lines>
                 <line number="18" hits="5"/>
                 <line number="21" hits="5"/>

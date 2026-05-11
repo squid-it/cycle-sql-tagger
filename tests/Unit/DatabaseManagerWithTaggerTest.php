@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace SquidIT\Tests\Cycle\Sql\Tagger\Unit;
 
 use Cycle\Database\LoggerFactoryInterface;
+use PHPUnit\Framework\Attributes\AllowMockObjectsWithoutExpectations;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
@@ -14,6 +15,7 @@ use SquidIT\Cycle\Sql\Tagger\Driver\MySQL\MySQLTagDriver;
 use SquidIT\Tests\Cycle\Sql\Tagger\Database\DatabaseConfig;
 use Throwable;
 
+#[AllowMockObjectsWithoutExpectations]
 class DatabaseManagerWithTaggerTest extends TestCase
 {
     private const string DEFAULT_DATABASE_NAME = 'mariaDb';
