@@ -180,9 +180,9 @@ class DatabaseWithTagger implements DatabaseInterface, WithTaggerInterface
      *
      * @phpstan-param T $query
      *
-     * @phpstan-return T
-     *
      * @throws SqlTaggerException
+     *
+     * @phpstan-return T
      */
     private function addTag(QueryInterface $query): QueryInterface
     {

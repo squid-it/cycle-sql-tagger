@@ -8,6 +8,7 @@ use Cycle\Database\DatabaseInterface;
 use Cycle\Database\Driver\DriverInterface;
 use Cycle\Database\Driver\MySQL\Query\MySQLDeleteQuery;
 use Cycle\Database\TableInterface;
+use PHPUnit\Framework\Attributes\AllowMockObjectsWithoutExpectations;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use SquidIT\Cycle\Sql\Tagger\DatabaseWithTagger;
@@ -22,6 +23,7 @@ use SquidIT\Cycle\Sql\Tagger\TableWithTagger;
 use SquidIT\Tests\Cycle\Sql\Tagger\Database\DatabaseConfig;
 use Throwable;
 
+#[AllowMockObjectsWithoutExpectations]
 class DatabaseWithTaggerTest extends TestCase
 {
     private const string TAG          = 'I Am A Tag';

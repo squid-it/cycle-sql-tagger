@@ -42,7 +42,7 @@ class DatabaseConfig
                     PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
                     PDO::ATTR_EMULATE_PREPARES   => true,
                     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-                    PDO::MYSQL_ATTR_INIT_COMMAND => "SET SESSION sql_mode = 'TRADITIONAL', collation_connection = @@collation_database, wait_timeout = 10",
+                    PDO\Mysql::ATTR_INIT_COMMAND => "SET SESSION sql_mode = 'TRADITIONAL', collation_connection = @@collation_database, wait_timeout = 10",
                 ]
             ),
             driver: MySQLTagDriver::class,
