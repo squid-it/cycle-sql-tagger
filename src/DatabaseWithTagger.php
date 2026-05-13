@@ -16,10 +16,11 @@ use SquidIT\Cycle\Sql\Tagger\Driver\MySQL\Query\MySQLSelectQueryWithTagger;
 use SquidIT\Cycle\Sql\Tagger\Driver\MySQL\Query\MySQLUpdateQueryWithTagger;
 use SquidIT\Cycle\Sql\Tagger\Exception\NotImplemented;
 use SquidIT\Cycle\Sql\Tagger\Exception\SqlTaggerException;
+use SquidIT\Cycle\Sql\Tagger\Interface\PendingSqlCommentStateInterface;
 use SquidIT\Cycle\Sql\Tagger\Interface\WithTaggerInterface;
 use SquidIT\Cycle\Sql\Tagger\Trait\WithTaggerTrait;
 
-class DatabaseWithTagger implements DatabaseInterface, WithTaggerInterface
+class DatabaseWithTagger implements DatabaseInterface, WithTaggerInterface, PendingSqlCommentStateInterface
 {
     use WithTaggerTrait;
 
