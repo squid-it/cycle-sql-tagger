@@ -39,7 +39,7 @@
   ],
   "require": {
     "ext-pdo": "*",
-    "php": "^8.4",
+    "php": "^8.5",
     "cycle/database": "^2.15"
   },
   "require-dev": {

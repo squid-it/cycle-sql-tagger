@@ -402,6 +402,28 @@ class DatabaseWithTaggerTest extends TestCase
         self::assertTrue($db->commit());
     }
 
+    public function testHasPendingSqlCommentReturnsFalseWhenNoSqlCommentsArePending(): void
+    {
+        $db = new DatabaseWithTagger($this->database);
+        self::assertFalse($db->hasPendingSqlComment());
+    }
+
+    public function testHasPendingSqlCommentReturnsTrueWhenSqlCommentsArePending(): void
+    {
+        $db = new DatabaseWithTagger($this->database);
+        $db->tagQueryWithComment(self::TAG);
+        self::assertTrue($db->hasPendingSqlComment());
+    }
+
+    public function testClearPendingSqlCommentClearsPendingCommentsSucceed(): void
+    {
+        $db = new DatabaseWithTagger($this->database);
+        $db->tagQueryWithComment(self::TAG);
+        self::assertTrue($db->hasPendingSqlComment());
+        $db->clearPendingSqlComment();
+        self::assertFalse($db->hasPendingSqlComment());
+    }
+
     /**
      * @throws Throwable
      */
