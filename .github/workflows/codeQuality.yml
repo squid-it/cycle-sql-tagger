@@ -2,7 +2,6 @@ name: PHP Code Quality
 
 on:
   pull_request:
-  push:
 
 jobs:
   test:
@@ -12,14 +11,13 @@ jobs:
     strategy:
       matrix:
         php-version:
-          - "8.3"
-          - "8.4"
+          - "8.5"
         operating-system:
           - "ubuntu-latest"
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v4"
+        uses: "actions/checkout@v6"
 
       - name: "Install PHP"
         uses: "shivammathur/setup-php@v2"
@@ -31,10 +29,9 @@ jobs:
         run: composer validate --strict
 
       - name: "Install dependencies"
-        run: composer install --prefer-dist --no-progress --ignore-platform-req=ext-swow
+        run: composer install --prefer-dist --no-progress
 
       - name: "Check coding standards"
-        if: ${{ matrix.php-version != '8.4' }}
         run: composer run-script cs:dry-run
 
       - name: "Check PHPStan"
