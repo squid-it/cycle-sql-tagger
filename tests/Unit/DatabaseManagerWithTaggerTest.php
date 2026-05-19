@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace SquidIT\Tests\Cycle\Sql\Tagger\Unit;
 
 use Cycle\Database\LoggerFactoryInterface;
-use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
@@ -18,16 +17,6 @@ class DatabaseManagerWithTaggerTest extends TestCase
 {
     private const string DEFAULT_DATABASE_NAME = 'mariaDb';
     private const string DRIVER_NAME           = 'mariaDbDsn';
-
-    private LoggerFactoryInterface&MockObject $loggerFactory;
-
-    /**
-     * @throws Throwable
-     */
-    public function setUp(): void
-    {
-        $this->loggerFactory = $this->createMock(LoggerFactoryInterface::class);
-    }
 
     public function testDatabaseReturnsDefaultDatabase(): void
     {
@@ -48,14 +37,15 @@ class DatabaseManagerWithTaggerTest extends TestCase
 
     public function testDatabaseReturnsDatabaseWithLoggerWhenLoggerFactoryIsProvided(): void
     {
-        $nullLogger = new NullLogger();
+        $nullLogger    = new NullLogger();
+        $loggerFactory = $this->createMock(LoggerFactoryInterface::class);
 
-        $this->loggerFactory
+        $loggerFactory
             ->expects(self::once())
             ->method('getLogger')
             ->willReturn($nullLogger);
 
-        $dbal = new DatabaseManagerWithTagger(DatabaseConfig::get(), $this->loggerFactory);
+        $dbal = new DatabaseManagerWithTagger(DatabaseConfig::get(), $loggerFactory);
         $dbal->database();
     }
 
@@ -72,7 +62,7 @@ class DatabaseManagerWithTaggerTest extends TestCase
      */
     public function testSetLoggerWillSetLoggerOnPreviouslyDefinedDrivers(): void
     {
-        $logger = $this->createMock(LoggerInterface::class);
+        $logger = self::createStub(LoggerInterface::class);
 
         $dbal = new DatabaseManagerWithTagger(DatabaseConfig::get());
         $dbal->driver(self::DRIVER_NAME);
@@ -87,7 +77,7 @@ class DatabaseManagerWithTaggerTest extends TestCase
      */
     public function testSetLoggerWillSetLoggerOnInitialDriverFetch(): void
     {
-        $logger = $this->createMock(LoggerInterface::class);
+        $logger = self::createStub(LoggerInterface::class);
 
         $dbal = new DatabaseManagerWithTagger(DatabaseConfig::get());
         $dbal->setLogger($logger);

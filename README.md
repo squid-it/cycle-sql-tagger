@@ -6,6 +6,7 @@ Cycle Database decorator to add SQL comments to your queries.
 * Tag Query & Execute database calls
 * Tag All QueryBuilder queries
 * Multi-Line comment support
+* Optional database logger with read/write counts and captured SQL queries
 
 ## Use Case
 When applications grow, it can be hard to keep track of the origins of an SQL Query.
@@ -80,6 +81,41 @@ $database->table('tableName')
     ->run();
 ```
 
+## Optional database logger
+
+`DbLogger` can be attached to the database manager when you want to inspect executed queries during tests, debugging, or local development.
+It keeps separate read and write counters, stores the executed SQL, and can optionally print colorized query output to the terminal.
+
+```php
+<?php
+
+declare(strict_types=1);
+
+use SquidIT\Cycle\Sql\Tagger\DatabaseManagerWithTagger;
+use SquidIT\Cycle\Sql\Tagger\Logger\DbLogger;
+
+$dbal = new DatabaseManagerWithTagger($dbConfig);
+
+$dbLogger = new DbLogger();
+$dbal->setLogger($dbLogger);
+
+// Optional: show colorized SQL output in the terminal.
+$dbLogger->enableDisplay();
+
+$database = $dbal->database();
+$database->query('SELECT * FROM users');
+$database->execute('UPDATE users SET active = 1 WHERE user_id = 1');
+
+$readCount  = $dbLogger->getReadCount();
+$writeCount = $dbLogger->getWriteCount();
+$queries    = $dbLogger->getQueries();
+
+// Clear captured queries and counters when needed.
+$dbLogger->reset();
+```
+
+`DbLoggerFactory` is also available when you want to use Cycle Database's logger-factory hook and create one logger per driver.
+
 ### Database log output (first example only)
 ```
 241128 17:21:54     29 Connect test@localhost on cycle_sql_tagger using TCP/IP
@@ -87,4 +123,3 @@ $database->table('tableName')
                                  SELECT [QUERY]
                     29 Quit	
 ```
-

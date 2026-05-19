@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="0.67222222222222" branch-rate="0" lines-covered="121" lines-valid="180" branches-covered="0" branches-valid="0" complexity="84" version="0.4">
+<coverage line-rate="0.55760368663594" branch-rate="0" lines-covered="121" lines-valid="217" branches-covered="0" branches-valid="0" complexity="103" version="0.4">
   
   <packages>
     <package name="DatabaseManagerWithTagger.php" line-rate="1" branch-rate="0" complexity="16">
       <classes>
         <class name="SquidIT\Cycle\Sql\Tagger\DatabaseManagerWithTagger" filename="src/DatabaseManagerWithTagger.php" line-rate="1" branch-rate="0" complexity="16">
           <methods>
-            <method name="__construct" signature="Cycle\Database\Config\DatabaseConfig $config, ?Cycle\Database\LoggerFactoryInterface $loggerFactory" line-rate="1" branch-rate="0" complexity="1">
+            <method name="__construct" signature="DatabaseConfig $config, ?LoggerFactoryInterface $loggerFactory" line-rate="1" branch-rate="0" complexity="1">
               <lines>
                 <line number="31" hits="6"/>
               </lines>
             </method>
-            <method name="setLogger" signature="Psr\Log\LoggerInterface $logger" line-rate="1" branch-rate="0" complexity="3">
+            <method name="setLogger" signature="LoggerInterface $logger" line-rate="1" branch-rate="0" complexity="3">
               <lines>
                 <line number="38" hits="2"/>
                 <line number="41" hits="2"/>
@@ -46,7 +45,7 @@
                 <line number="94" hits="6"/>
               </lines>
             </method>
-            <method name="makeDatabase" signature="Cycle\Database\Config\DatabasePartial $database" line-rate="1" branch-rate="0" complexity="2">
+            <method name="makeDatabase" signature="DatabasePartial $database" line-rate="1" branch-rate="0" complexity="2">
               <lines>
                 <line number="99" hits="3"/>
                 <line number="100" hits="3"/>
@@ -57,7 +56,7 @@
                 <line number="106" hits="3"/>
               </lines>
             </method>
-            <method name="getLoggerForDriver" signature="Cycle\Database\Driver\DriverInterface $driver" line-rate="1" branch-rate="0" complexity="2">
+            <method name="getLoggerForDriver" signature="DriverInterface $driver" line-rate="1" branch-rate="0" complexity="2">
               <lines>
                 <line number="111" hits="6"/>
                 <line number="112" hits="5"/>
@@ -107,7 +106,7 @@
       <classes>
         <class name="SquidIT\Cycle\Sql\Tagger\DatabaseWithTagger" filename="src/DatabaseWithTagger.php" line-rate="1" branch-rate="0" complexity="23">
           <methods>
-            <method name="__construct" signature="Cycle\Database\DatabaseInterface $db" line-rate="1" branch-rate="0" complexity="1">
+            <method name="__construct" signature="DatabaseInterface $db" line-rate="1" branch-rate="0" complexity="1">
               <lines>
                 <line number="35" hits="26"/>
               </lines>
@@ -215,7 +214,7 @@
                 <line number="175" hits="1"/>
               </lines>
             </method>
-            <method name="addTag" signature="Cycle\Database\Query\QueryInterface $query" line-rate="1" branch-rate="0" complexity="3">
+            <method name="addTag" signature="QueryInterface $query" line-rate="1" branch-rate="0" complexity="3">
               <lines>
                 <line number="189" hits="6"/>
                 <line number="190" hits="1"/>
@@ -277,7 +276,7 @@
       <classes>
         <class name="SquidIT\Cycle\Sql\Tagger\Driver\MySQL\MySQLTagDriver" filename="src/Driver\MySQL\MySQLTagDriver.php" line-rate="1" branch-rate="0" complexity="1">
           <methods>
-            <method name="create" signature="Cycle\Database\Config\DriverConfig $config" line-rate="1" branch-rate="0" complexity="1">
+            <method name="create" signature="DriverConfig $config" line-rate="1" branch-rate="0" complexity="1">
               <lines>
                 <line number="21" hits="12"/>
                 <line number="22" hits="12"/>
@@ -408,11 +407,141 @@
     <package name="Interface\WithTaggerInterface.php" line-rate="0" branch-rate="0" complexity="0">
       <classes/>
     </package>
+    <package name="Logger\DbLogger.php" line-rate="0" branch-rate="0" complexity="18">
+      <classes>
+        <class name="SquidIT\Cycle\Sql\Tagger\Logger\DbLogger" filename="src/Logger\DbLogger.php" line-rate="0" branch-rate="0" complexity="18">
+          <methods>
+            <method name="__construct" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="26" hits="0"/>
+                <line number="27" hits="0"/>
+              </lines>
+            </method>
+            <method name="getWriteCount" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="32" hits="0"/>
+              </lines>
+            </method>
+            <method name="getReadCount" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="37" hits="0"/>
+              </lines>
+            </method>
+            <method name="getQueries" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="45" hits="0"/>
+                <line number="46" hits="0"/>
+                <line number="47" hits="0"/>
+                <line number="48" hits="0"/>
+              </lines>
+            </method>
+            <method name="reset" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="53" hits="0"/>
+                <line number="54" hits="0"/>
+                <line number="55" hits="0"/>
+                <line number="56" hits="0"/>
+              </lines>
+            </method>
+            <method name="log" signature="$level, string|Stringable $message, array $context" line-rate="0" branch-rate="0" complexity="11">
+              <lines>
+                <line number="61" hits="0"/>
+                <line number="62" hits="0"/>
+                <line number="65" hits="0"/>
+                <line number="66" hits="0"/>
+                <line number="67" hits="0"/>
+                <line number="69" hits="0"/>
+                <line number="70" hits="0"/>
+                <line number="72" hits="0"/>
+                <line number="73" hits="0"/>
+                <line number="77" hits="0"/>
+                <line number="78" hits="0"/>
+                <line number="81" hits="0"/>
+                <line number="82" hits="0"/>
+                <line number="83" hits="0"/>
+                <line number="84" hits="0"/>
+                <line number="85" hits="0"/>
+                <line number="86" hits="0"/>
+                <line number="87" hits="0"/>
+                <line number="88" hits="0"/>
+                <line number="89" hits="0"/>
+                <line number="90" hits="0"/>
+                <line number="92" hits="0"/>
+              </lines>
+            </method>
+            <method name="enableDisplay" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="98" hits="0"/>
+              </lines>
+            </method>
+            <method name="disableDisplay" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="103" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="26" hits="0"/>
+            <line number="27" hits="0"/>
+            <line number="32" hits="0"/>
+            <line number="37" hits="0"/>
+            <line number="45" hits="0"/>
+            <line number="46" hits="0"/>
+            <line number="47" hits="0"/>
+            <line number="48" hits="0"/>
+            <line number="53" hits="0"/>
+            <line number="54" hits="0"/>
+            <line number="55" hits="0"/>
+            <line number="56" hits="0"/>
+            <line number="61" hits="0"/>
+            <line number="62" hits="0"/>
+            <line number="65" hits="0"/>
+            <line number="66" hits="0"/>
+            <line number="67" hits="0"/>
+            <line number="69" hits="0"/>
+            <line number="70" hits="0"/>
+            <line number="72" hits="0"/>
+            <line number="73" hits="0"/>
+            <line number="77" hits="0"/>
+            <line number="78" hits="0"/>
+            <line number="81" hits="0"/>
+            <line number="82" hits="0"/>
+            <line number="83" hits="0"/>
+            <line number="84" hits="0"/>
+            <line number="85" hits="0"/>
+            <line number="86" hits="0"/>
+            <line number="87" hits="0"/>
+            <line number="88" hits="0"/>
+            <line number="89" hits="0"/>
+            <line number="90" hits="0"/>
+            <line number="92" hits="0"/>
+            <line number="98" hits="0"/>
+            <line number="103" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Logger\DbLoggerFactory.php" line-rate="0" branch-rate="0" complexity="1">
+      <classes>
+        <class name="SquidIT\Cycle\Sql\Tagger\Logger\DbLoggerFactory" filename="src/Logger\DbLoggerFactory.php" line-rate="0" branch-rate="0" complexity="1">
+          <methods>
+            <method name="getLogger" signature="?DriverInterface $driver" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="16" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="16" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
     <package name="TableWithTagger.php" line-rate="0.020833333333333" branch-rate="0" complexity="27">
       <classes>
         <class name="SquidIT\Cycle\Sql\Tagger\TableWithTagger" filename="src/TableWithTagger.php" line-rate="0.020833333333333" branch-rate="0" complexity="27">
           <methods>
-            <method name="__construct" signature="SquidIT\Cycle\Sql\Tagger\DatabaseWithTagger $database, string $name" line-rate="1" branch-rate="0" complexity="1">
+            <method name="__construct" signature="DatabaseWithTagger $database, string $name" line-rate="1" branch-rate="0" complexity="1">
               <lines>
                 <line number="39" hits="2"/>
               </lines>
@@ -650,7 +779,7 @@
       <classes>
         <class name="SquidIT\Cycle\Sql\Tagger\Trait\SQLStatementWithTagTrait" filename="src/Trait\SQLStatementWithTagTrait.php" line-rate="1" branch-rate="0" complexity="2">
           <methods>
-            <method name="sqlStatement" signature="?Cycle\Database\Query\QueryParameters $parameters" line-rate="1" branch-rate="0" complexity="2">
+            <method name="sqlStatement" signature="?QueryParameters $parameters" line-rate="1" branch-rate="0" complexity="2">
               <lines>
                 <line number="18" hits="5"/>
                 <line number="21" hits="5"/>
