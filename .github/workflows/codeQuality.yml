@@ -2,7 +2,6 @@ name: PHP Code Quality
 
 on:
   pull_request:
-  push:
 
 jobs:
   test:
@@ -30,10 +29,13 @@ jobs:
         run: composer validate --strict
 
       - name: "Install dependencies"
-        run: composer install --prefer-dist --no-progress --ignore-platform-req=ext-swow
+        run: composer install --prefer-dist --no-progress
 
       - name: "Check coding standards"
+<<<<<<< HEAD
+=======
         if: ${{ matrix.php-version == '8.5' }}
+>>>>>>> origin/main
         run: composer run-script cs:dry-run
 
       - name: "Check PHPStan"
