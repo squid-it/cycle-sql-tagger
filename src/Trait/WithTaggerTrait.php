@@ -40,6 +40,16 @@ trait WithTaggerTrait
         return $this;
     }
 
+    public function hasPendingSqlComment(): bool
+    {
+        return empty($this->comment) === false;
+    }
+
+    public function clearPendingSqlComment(): void
+    {
+        $this->comment = null;
+    }
+
     protected function createSqlComment(): string
     {
         if ($this->comment === null) {

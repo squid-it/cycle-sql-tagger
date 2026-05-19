@@ -32,6 +32,10 @@ jobs:
         run: composer install --prefer-dist --no-progress
 
       - name: "Check coding standards"
+<<<<<<< HEAD
+=======
+        if: ${{ matrix.php-version == '8.5' }}
+>>>>>>> origin/main
         run: composer run-script cs:dry-run
 
       - name: "Check PHPStan"
