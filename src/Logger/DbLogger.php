@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace SquidIT\Cycle\Sql\Tagger\Logger;
 
-use Psr\Log\LoggerInterface;
 use Psr\Log\LoggerTrait;
 use Psr\Log\LogLevel;
+use SquidIT\Cycle\Sql\Tagger\Logger\Interface\DbLoggerInterface;
 use Stringable;
 
-class DbLogger implements LoggerInterface
+class DbLogger implements DbLoggerInterface
 {
     use LoggerTrait;
 
@@ -58,7 +58,7 @@ class DbLogger implements LoggerInterface
 
     public function log($level, string|Stringable $message, array $context = []): void
     {
-        if (!empty($context['elapsed'])) {
+        if (empty($context['elapsed']) === false) {
             $sql = strtolower((string) $message);
 
             if (
@@ -74,7 +74,7 @@ class DbLogger implements LoggerInterface
             }
         }
 
-        if (!$this->display) {
+        if ($this->display === false) {
             return;
         }
 
