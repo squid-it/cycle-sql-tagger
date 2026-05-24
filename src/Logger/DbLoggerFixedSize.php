@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace SquidIT\Cycle\Sql\Tagger\Logger;
 
 use InvalidArgumentException;
-use SplDoublyLinkedList;
 use SplQueue;
 use SquidIT\Cycle\Sql\Tagger\Logger\Abstract\AbstractDbLogger;
 
@@ -90,9 +89,6 @@ class DbLoggerFixedSize extends AbstractDbLogger
      */
     private static function createQueryQueue(): SplQueue
     {
-        $queryQueue = new SplQueue();
-        $queryQueue->setIteratorMode(SplDoublyLinkedList::IT_MODE_FIFO | SplDoublyLinkedList::IT_MODE_KEEP);
-
-        return $queryQueue;
+        return new SplQueue();
     }
 }
