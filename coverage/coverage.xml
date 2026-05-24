@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage line-rate="0.63670411985019" branch-rate="0" lines-covered="170" lines-valid="267" branches-covered="0" branches-valid="0" complexity="128" version="0.4">
+<coverage line-rate="0.93103448275862" branch-rate="0" lines-covered="243" lines-valid="261" branches-covered="0" branches-valid="0" complexity="127" version="0.4">
   
   <packages>
     <package name="DatabaseManagerWithTagger.php" line-rate="1" branch-rate="0" complexity="16">
@@ -410,266 +410,280 @@
     <package name="Interface\WithTaggerInterface.php" line-rate="0" branch-rate="0" complexity="0">
       <classes/>
     </package>
-    <package name="Logger\DbLogger.php" line-rate="0" branch-rate="0" complexity="18">
+    <package name="Logger\Abstract\AbstractDbLogger.php" line-rate="0.92" branch-rate="0" complexity="26">
       <classes>
-        <class name="SquidIT\Cycle\Sql\Tagger\Logger\DbLogger" filename="src/Logger\DbLogger.php" line-rate="0" branch-rate="0" complexity="18">
+        <class name="SquidIT\Cycle\Sql\Tagger\Logger\Abstract\AbstractDbLogger" filename="src/Logger\Abstract\AbstractDbLogger.php" line-rate="0.92" branch-rate="0" complexity="26">
           <methods>
-            <method name="__construct" signature="" line-rate="0" branch-rate="0" complexity="1">
+            <method name="getWriteCount" signature="" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="26" hits="0"/>
-                <line number="27" hits="0"/>
+                <line number="41" hits="51"/>
               </lines>
             </method>
-            <method name="getWriteCount" signature="" line-rate="0" branch-rate="0" complexity="1">
+            <method name="getReadCount" signature="" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="32" hits="0"/>
+                <line number="46" hits="51"/>
               </lines>
             </method>
-            <method name="getReadCount" signature="" line-rate="0" branch-rate="0" complexity="1">
+            <method name="reset" signature="" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="37" hits="0"/>
+                <line number="51" hits="2"/>
+                <line number="52" hits="2"/>
+                <line number="53" hits="2"/>
               </lines>
             </method>
-            <method name="getQueries" signature="" line-rate="0" branch-rate="0" complexity="1">
+            <method name="log" signature="$level, string|Stringable $message, array $context" line-rate="1" branch-rate="0" complexity="4">
               <lines>
-                <line number="45" hits="0"/>
-                <line number="46" hits="0"/>
-                <line number="47" hits="0"/>
-                <line number="48" hits="0"/>
+                <line number="61" hits="55"/>
+                <line number="63" hits="55"/>
+                <line number="64" hits="53"/>
+                <line number="67" hits="55"/>
+                <line number="68" hits="51"/>
+                <line number="71" hits="4"/>
+                <line number="73" hits="4"/>
+                <line number="74" hits="4"/>
+                <line number="77" hits="4"/>
               </lines>
             </method>
-            <method name="reset" signature="" line-rate="0" branch-rate="0" complexity="1">
+            <method name="enableDisplay" signature="" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="53" hits="0"/>
-                <line number="54" hits="0"/>
-                <line number="55" hits="0"/>
-                <line number="56" hits="0"/>
-              </lines>
-            </method>
-            <method name="log" signature="$level, string|Stringable $message, array $context" line-rate="0" branch-rate="0" complexity="11">
-              <lines>
-                <line number="61" hits="0"/>
-                <line number="62" hits="0"/>
-                <line number="65" hits="0"/>
-                <line number="66" hits="0"/>
-                <line number="67" hits="0"/>
-                <line number="69" hits="0"/>
-                <line number="70" hits="0"/>
-                <line number="72" hits="0"/>
-                <line number="73" hits="0"/>
-                <line number="77" hits="0"/>
-                <line number="78" hits="0"/>
-                <line number="81" hits="0"/>
-                <line number="82" hits="0"/>
-                <line number="83" hits="0"/>
-                <line number="84" hits="0"/>
-                <line number="85" hits="0"/>
-                <line number="86" hits="0"/>
-                <line number="87" hits="0"/>
-                <line number="88" hits="0"/>
-                <line number="89" hits="0"/>
-                <line number="90" hits="0"/>
-                <line number="92" hits="0"/>
-              </lines>
-            </method>
-            <method name="enableDisplay" signature="" line-rate="0" branch-rate="0" complexity="1">
-              <lines>
-                <line number="98" hits="0"/>
+                <line number="82" hits="4"/>
               </lines>
             </method>
             <method name="disableDisplay" signature="" line-rate="0" branch-rate="0" complexity="1">
               <lines>
-                <line number="103" hits="0"/>
+                <line number="87" hits="0"/>
+              </lines>
+            </method>
+            <method name="trackQuery" signature="string $query" line-rate="1" branch-rate="0" complexity="2">
+              <lines>
+                <line number="98" hits="53"/>
+                <line number="99" hits="48"/>
+                <line number="100" hits="48"/>
+                <line number="102" hits="48"/>
+                <line number="105" hits="7"/>
+                <line number="106" hits="7"/>
+              </lines>
+            </method>
+            <method name="isWriteQuery" signature="string $query" line-rate="1" branch-rate="0" complexity="5">
+              <lines>
+                <line number="111" hits="53"/>
+                <line number="113" hits="53"/>
+                <line number="114" hits="53"/>
+                <line number="115" hits="44"/>
+                <line number="119" hits="11"/>
+                <line number="120" hits="11"/>
+                <line number="121" hits="4"/>
+                <line number="125" hits="7"/>
+              </lines>
+            </method>
+            <method name="normalizeSqlForClassification" signature="string $query" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="130" hits="53"/>
+              </lines>
+            </method>
+            <method name="stripLeadingSqlComments" signature="string $query" line-rate="0.85714285714286" branch-rate="0" complexity="3">
+              <lines>
+                <line number="135" hits="53"/>
+                <line number="137" hits="53"/>
+                <line number="138" hits="26"/>
+                <line number="140" hits="26"/>
+                <line number="141" hits="0"/>
+                <line number="144" hits="26"/>
+                <line number="147" hits="53"/>
+              </lines>
+            </method>
+            <method name="displayMessage" signature="string $level, string $message" line-rate="0.83333333333333" branch-rate="0" complexity="6">
+              <lines>
+                <line number="152" hits="4"/>
+                <line number="154" hits="4"/>
+                <line number="155" hits="0"/>
+                <line number="156" hits="4"/>
+                <line number="157" hits="0"/>
+                <line number="158" hits="4"/>
+                <line number="159" hits="1"/>
+                <line number="160" hits="3"/>
+                <line number="161" hits="1"/>
+                <line number="162" hits="2"/>
+                <line number="163" hits="1"/>
+                <line number="165" hits="1"/>
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="26" hits="0"/>
-            <line number="27" hits="0"/>
-            <line number="32" hits="0"/>
-            <line number="37" hits="0"/>
-            <line number="45" hits="0"/>
-            <line number="46" hits="0"/>
-            <line number="47" hits="0"/>
-            <line number="48" hits="0"/>
-            <line number="53" hits="0"/>
-            <line number="54" hits="0"/>
-            <line number="55" hits="0"/>
-            <line number="56" hits="0"/>
-            <line number="61" hits="0"/>
-            <line number="62" hits="0"/>
-            <line number="65" hits="0"/>
-            <line number="66" hits="0"/>
-            <line number="67" hits="0"/>
-            <line number="69" hits="0"/>
-            <line number="70" hits="0"/>
-            <line number="72" hits="0"/>
-            <line number="73" hits="0"/>
-            <line number="77" hits="0"/>
-            <line number="78" hits="0"/>
-            <line number="81" hits="0"/>
-            <line number="82" hits="0"/>
-            <line number="83" hits="0"/>
-            <line number="84" hits="0"/>
-            <line number="85" hits="0"/>
-            <line number="86" hits="0"/>
+            <line number="41" hits="51"/>
+            <line number="46" hits="51"/>
+            <line number="51" hits="2"/>
+            <line number="52" hits="2"/>
+            <line number="53" hits="2"/>
+            <line number="61" hits="55"/>
+            <line number="63" hits="55"/>
+            <line number="64" hits="53"/>
+            <line number="67" hits="55"/>
+            <line number="68" hits="51"/>
+            <line number="71" hits="4"/>
+            <line number="73" hits="4"/>
+            <line number="74" hits="4"/>
+            <line number="77" hits="4"/>
+            <line number="82" hits="4"/>
             <line number="87" hits="0"/>
-            <line number="88" hits="0"/>
-            <line number="89" hits="0"/>
-            <line number="90" hits="0"/>
-            <line number="92" hits="0"/>
-            <line number="98" hits="0"/>
-            <line number="103" hits="0"/>
+            <line number="98" hits="53"/>
+            <line number="99" hits="48"/>
+            <line number="100" hits="48"/>
+            <line number="102" hits="48"/>
+            <line number="105" hits="7"/>
+            <line number="106" hits="7"/>
+            <line number="111" hits="53"/>
+            <line number="113" hits="53"/>
+            <line number="114" hits="53"/>
+            <line number="115" hits="44"/>
+            <line number="119" hits="11"/>
+            <line number="120" hits="11"/>
+            <line number="121" hits="4"/>
+            <line number="125" hits="7"/>
+            <line number="130" hits="53"/>
+            <line number="135" hits="53"/>
+            <line number="137" hits="53"/>
+            <line number="138" hits="26"/>
+            <line number="140" hits="26"/>
+            <line number="141" hits="0"/>
+            <line number="144" hits="26"/>
+            <line number="147" hits="53"/>
+            <line number="152" hits="4"/>
+            <line number="154" hits="4"/>
+            <line number="155" hits="0"/>
+            <line number="156" hits="4"/>
+            <line number="157" hits="0"/>
+            <line number="158" hits="4"/>
+            <line number="159" hits="1"/>
+            <line number="160" hits="3"/>
+            <line number="161" hits="1"/>
+            <line number="162" hits="2"/>
+            <line number="163" hits="1"/>
+            <line number="165" hits="1"/>
           </lines>
         </class>
       </classes>
     </package>
-    <package name="Logger\DbLoggerFixedSize.php" line-rate="0" branch-rate="0" complexity="23">
+    <package name="Logger\DbLogger.php" line-rate="1" branch-rate="0" complexity="4">
       <classes>
-        <class name="SquidIT\Cycle\Sql\Tagger\Logger\DbLoggerFixedSize" filename="src/Logger\DbLoggerFixedSize.php" line-rate="0" branch-rate="0" complexity="23">
+        <class name="SquidIT\Cycle\Sql\Tagger\Logger\DbLogger" filename="src/Logger\DbLogger.php" line-rate="1" branch-rate="0" complexity="4">
           <methods>
-            <method name="__construct" signature="int $maxSize" line-rate="0" branch-rate="0" complexity="2">
+            <method name="getQueries" signature="" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="42" hits="0"/>
-                <line number="43" hits="0"/>
-                <line number="46" hits="0"/>
-                <line number="47" hits="0"/>
-                <line number="48" hits="0"/>
+                <line number="22" hits="25"/>
+                <line number="23" hits="25"/>
+                <line number="24" hits="25"/>
+                <line number="25" hits="25"/>
               </lines>
             </method>
-            <method name="getWriteCount" signature="" line-rate="0" branch-rate="0" complexity="1">
+            <method name="storeReadQuery" signature="string $query" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="53" hits="0"/>
+                <line number="30" hits="4"/>
               </lines>
             </method>
-            <method name="getReadCount" signature="" line-rate="0" branch-rate="0" complexity="1">
+            <method name="storeWriteQuery" signature="string $query" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="58" hits="0"/>
+                <line number="35" hits="25"/>
               </lines>
             </method>
-            <method name="getQueries" signature="" line-rate="0" branch-rate="0" complexity="1">
+            <method name="resetStoredQueries" signature="" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="66" hits="0"/>
-                <line number="67" hits="0"/>
-                <line number="68" hits="0"/>
-                <line number="69" hits="0"/>
-              </lines>
-            </method>
-            <method name="reset" signature="" line-rate="0" branch-rate="0" complexity="1">
-              <lines>
-                <line number="74" hits="0"/>
-                <line number="75" hits="0"/>
-                <line number="76" hits="0"/>
-                <line number="77" hits="0"/>
-              </lines>
-            </method>
-            <method name="log" signature="$level, string|Stringable $message, array $context" line-rate="0" branch-rate="0" complexity="11">
-              <lines>
-                <line number="85" hits="0"/>
-                <line number="87" hits="0"/>
-                <line number="88" hits="0"/>
-                <line number="91" hits="0"/>
-                <line number="92" hits="0"/>
-                <line number="93" hits="0"/>
-                <line number="95" hits="0"/>
-                <line number="96" hits="0"/>
-                <line number="98" hits="0"/>
-                <line number="99" hits="0"/>
-                <line number="103" hits="0"/>
-                <line number="104" hits="0"/>
-                <line number="107" hits="0"/>
-                <line number="108" hits="0"/>
-                <line number="109" hits="0"/>
-                <line number="110" hits="0"/>
-                <line number="111" hits="0"/>
-                <line number="112" hits="0"/>
-                <line number="113" hits="0"/>
-                <line number="114" hits="0"/>
-                <line number="115" hits="0"/>
-                <line number="116" hits="0"/>
-                <line number="118" hits="0"/>
-              </lines>
-            </method>
-            <method name="enableDisplay" signature="" line-rate="0" branch-rate="0" complexity="1">
-              <lines>
-                <line number="124" hits="0"/>
-              </lines>
-            </method>
-            <method name="disableDisplay" signature="" line-rate="0" branch-rate="0" complexity="1">
-              <lines>
-                <line number="129" hits="0"/>
-              </lines>
-            </method>
-            <method name="addQuery" signature="SplQueue $queryQueue, string $query" line-rate="0" branch-rate="0" complexity="2">
-              <lines>
-                <line number="134" hits="0"/>
-                <line number="136" hits="0"/>
-                <line number="137" hits="0"/>
-                <line number="140" hits="0"/>
-              </lines>
-            </method>
-            <method name="queueToArray" signature="SplQueue $queryQueue" line-rate="0" branch-rate="0" complexity="1">
-              <lines>
-                <line number="149" hits="0"/>
-              </lines>
-            </method>
-            <method name="createQueryQueue" signature="" line-rate="0" branch-rate="0" complexity="1">
-              <lines>
-                <line number="157" hits="0"/>
-                <line number="158" hits="0"/>
-                <line number="160" hits="0"/>
+                <line number="40" hits="1"/>
+                <line number="41" hits="1"/>
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="42" hits="0"/>
-            <line number="43" hits="0"/>
-            <line number="46" hits="0"/>
-            <line number="47" hits="0"/>
-            <line number="48" hits="0"/>
-            <line number="53" hits="0"/>
-            <line number="58" hits="0"/>
-            <line number="66" hits="0"/>
-            <line number="67" hits="0"/>
-            <line number="68" hits="0"/>
-            <line number="69" hits="0"/>
-            <line number="74" hits="0"/>
-            <line number="75" hits="0"/>
-            <line number="76" hits="0"/>
-            <line number="77" hits="0"/>
-            <line number="85" hits="0"/>
-            <line number="87" hits="0"/>
-            <line number="88" hits="0"/>
-            <line number="91" hits="0"/>
-            <line number="92" hits="0"/>
-            <line number="93" hits="0"/>
-            <line number="95" hits="0"/>
-            <line number="96" hits="0"/>
-            <line number="98" hits="0"/>
-            <line number="99" hits="0"/>
-            <line number="103" hits="0"/>
-            <line number="104" hits="0"/>
-            <line number="107" hits="0"/>
-            <line number="108" hits="0"/>
-            <line number="109" hits="0"/>
-            <line number="110" hits="0"/>
-            <line number="111" hits="0"/>
-            <line number="112" hits="0"/>
-            <line number="113" hits="0"/>
-            <line number="114" hits="0"/>
-            <line number="115" hits="0"/>
-            <line number="116" hits="0"/>
-            <line number="118" hits="0"/>
-            <line number="124" hits="0"/>
-            <line number="129" hits="0"/>
-            <line number="134" hits="0"/>
-            <line number="136" hits="0"/>
-            <line number="137" hits="0"/>
-            <line number="140" hits="0"/>
-            <line number="149" hits="0"/>
-            <line number="157" hits="0"/>
-            <line number="158" hits="0"/>
-            <line number="160" hits="0"/>
+            <line number="22" hits="25"/>
+            <line number="23" hits="25"/>
+            <line number="24" hits="25"/>
+            <line number="25" hits="25"/>
+            <line number="30" hits="4"/>
+            <line number="35" hits="25"/>
+            <line number="40" hits="1"/>
+            <line number="41" hits="1"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Logger\DbLoggerFixedSize.php" line-rate="0.95" branch-rate="0" complexity="10">
+      <classes>
+        <class name="SquidIT\Cycle\Sql\Tagger\Logger\DbLoggerFixedSize" filename="src/Logger\DbLoggerFixedSize.php" line-rate="0.95" branch-rate="0" complexity="10">
+          <methods>
+            <method name="__construct" signature="int $maxSize" line-rate="0.8" branch-rate="0" complexity="2">
+              <lines>
+                <line number="29" hits="26"/>
+                <line number="30" hits="0"/>
+                <line number="33" hits="26"/>
+                <line number="34" hits="26"/>
+                <line number="35" hits="26"/>
+              </lines>
+            </method>
+            <method name="getQueries" signature="" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="43" hits="26"/>
+                <line number="44" hits="26"/>
+                <line number="45" hits="26"/>
+                <line number="46" hits="26"/>
+              </lines>
+            </method>
+            <method name="storeReadQuery" signature="string $query" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="51" hits="3"/>
+              </lines>
+            </method>
+            <method name="storeWriteQuery" signature="string $query" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="56" hits="23"/>
+              </lines>
+            </method>
+            <method name="resetStoredQueries" signature="" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="61" hits="1"/>
+                <line number="62" hits="1"/>
+              </lines>
+            </method>
+            <method name="addQuery" signature="SplQueue $queryQueue, string $query" line-rate="1" branch-rate="0" complexity="2">
+              <lines>
+                <line number="70" hits="25"/>
+                <line number="72" hits="25"/>
+                <line number="73" hits="1"/>
+              </lines>
+            </method>
+            <method name="queueToArray" signature="SplQueue $queryQueue" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="85" hits="26"/>
+              </lines>
+            </method>
+            <method name="createQueryQueue" signature="" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="93" hits="26"/>
+                <line number="94" hits="26"/>
+                <line number="96" hits="26"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="29" hits="26"/>
+            <line number="30" hits="0"/>
+            <line number="33" hits="26"/>
+            <line number="34" hits="26"/>
+            <line number="35" hits="26"/>
+            <line number="43" hits="26"/>
+            <line number="44" hits="26"/>
+            <line number="45" hits="26"/>
+            <line number="46" hits="26"/>
+            <line number="51" hits="3"/>
+            <line number="56" hits="23"/>
+            <line number="61" hits="1"/>
+            <line number="62" hits="1"/>
+            <line number="70" hits="25"/>
+            <line number="72" hits="25"/>
+            <line number="73" hits="1"/>
+            <line number="85" hits="26"/>
+            <line number="93" hits="26"/>
+            <line number="94" hits="26"/>
+            <line number="96" hits="26"/>
           </lines>
         </class>
       </classes>
