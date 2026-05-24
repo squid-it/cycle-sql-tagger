@@ -9,6 +9,7 @@
 .php-cs-fixer.cache
 tests/Bin/
 /vendor/
+/coverage/
 /phpunit.xml
 /.phpunit.result.cache
 php_errors.log
@@ -21,4 +22,3 @@ raw.php
 .env
 .env.test
 .env.daemon
-

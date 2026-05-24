@@ -53,6 +53,42 @@ class DbLoggerFixedSizeTest extends TestCase
         ];
     }
 
+    /**
+     * @return array<string, array{elapsed: float|int|string}>
+     */
+    public static function zeroElapsedContextProvider(): array
+    {
+        return [
+            'float zero' => [
+                'elapsed' => 0.0,
+            ],
+            'integer zero' => [
+                'elapsed' => 0,
+            ],
+            'string zero' => [
+                'elapsed' => '0',
+            ],
+        ];
+    }
+
+    /**
+     * @return array<string, array{query: string}>
+     */
+    public static function lineCommentedWriteQueryProvider(): array
+    {
+        return [
+            'dash comment' => [
+                'query' => "-- logger test\nINSERT INTO `tag_table` (`name`) VALUES ('Ada')",
+            ],
+            'hash comment' => [
+                'query' => "# logger test\nINSERT INTO `tag_table` (`name`) VALUES ('Ada')",
+            ],
+            'mixed comments' => [
+                'query' => "-- logger test\r\n# logger test\n/* logger test */\nUPDATE `tag_table` SET `name` = 'Ada'",
+            ],
+        ];
+    }
+
     #[DataProvider('writeQueryProvider')]
     public function testWriteQueryIsTrackedAsWriteSucceeds(string $query): void
     {
@@ -90,6 +126,24 @@ class DbLoggerFixedSizeTest extends TestCase
         );
     }
 
+    #[DataProvider('lineCommentedWriteQueryProvider')]
+    public function testLineCommentedWriteQueryIsTrackedAsWriteSucceeds(string $query): void
+    {
+        $dbLoggerFixedSize = new DbLoggerFixedSize();
+
+        $dbLoggerFixedSize->log(LogLevel::DEBUG, $query, ['elapsed' => 1]);
+
+        self::assertSame(1, $dbLoggerFixedSize->getWriteCount());
+        self::assertSame(0, $dbLoggerFixedSize->getReadCount());
+        self::assertSame(
+            [
+                'read'  => [],
+                'write' => [$query],
+            ],
+            $dbLoggerFixedSize->getQueries(),
+        );
+    }
+
     public function testReadQueryIsTrackedAsReadSucceeds(): void
     {
         $query             = "SELECT * FROM `tag_table`";
@@ -119,6 +173,25 @@ class DbLoggerFixedSizeTest extends TestCase
         self::assertSame(
             [
                 'read'  => [],
+                'write' => [],
+            ],
+            $dbLoggerFixedSize->getQueries(),
+        );
+    }
+
+    #[DataProvider('zeroElapsedContextProvider')]
+    public function testQueryWithZeroElapsedContextIsTrackedSucceeds(float|int|string $elapsed): void
+    {
+        $query             = "SELECT * FROM `tag_table`";
+        $dbLoggerFixedSize = new DbLoggerFixedSize();
+
+        $dbLoggerFixedSize->log(LogLevel::DEBUG, $query, ['elapsed' => $elapsed]);
+
+        self::assertSame(0, $dbLoggerFixedSize->getWriteCount());
+        self::assertSame(1, $dbLoggerFixedSize->getReadCount());
+        self::assertSame(
+            [
+                'read'  => [$query],
                 'write' => [],
             ],
             $dbLoggerFixedSize->getQueries(),

@@ -6,6 +6,11 @@ namespace SquidIT\Cycle\Sql\Tagger\Logger;
 
 use SquidIT\Cycle\Sql\Tagger\Logger\Abstract\AbstractDbLogger;
 
+/**
+ * Unbounded query logger for short-lived debug contexts.
+ *
+ * Use DbLoggerFixedSize for long-running workers, or call reset() between worker cycles.
+ */
 class DbLogger extends AbstractDbLogger
 {
     /** @var array<int, string> */

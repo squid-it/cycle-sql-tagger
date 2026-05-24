@@ -60,7 +60,7 @@ abstract class AbstractDbLogger implements DbLoggerInterface
     {
         $messageAsString = (string) $message;
 
-        if (empty($context['elapsed']) === false) {
+        if (isset($context['elapsed']) === true) {
             $this->trackQuery($messageAsString);
         }
 
@@ -68,13 +68,7 @@ abstract class AbstractDbLogger implements DbLoggerInterface
             return;
         }
 
-        $levelAsString = '';
-
-        if (is_string($level) === true) {
-            $levelAsString = $level;
-        }
-
-        $this->displayMessage($levelAsString, $messageAsString);
+        $this->displayMessage((string) $level, $messageAsString);
     }
 
     public function enableDisplay(): void
@@ -96,20 +90,25 @@ abstract class AbstractDbLogger implements DbLoggerInterface
     private function trackQuery(string $query): void
     {
         if ($this->isWriteQuery($query) === true) {
-            $this->countWrites++;
             $this->storeWriteQuery($query);
+            $this->countWrites++;
 
             return;
         }
 
-        $this->countReads++;
         $this->storeReadQuery($query);
+        $this->countReads++;
     }
 
     private function isWriteQuery(string $query): bool
     {
         $sql = $this->normalizeSqlForClassification($query);
 
+        return $this->isWriteSql($sql);
+    }
+
+    private function isWriteSql(string $sql): bool
+    {
         foreach (self::WRITE_SQL_VERB_LIST as $writeSqlVerb) {
             if (str_starts_with($sql, $writeSqlVerb) === true) {
                 return true;
@@ -134,32 +133,53 @@ abstract class AbstractDbLogger implements DbLoggerInterface
     {
         $sql = ltrim($query);
 
-        while (str_starts_with($sql, '/*') === true) {
-            $commentEndPosition = strpos($sql, '*/');
+        while (
+            str_starts_with($sql, '/*') === true
+            || str_starts_with($sql, '--') === true
+            || str_starts_with($sql, '#') === true
+        ) {
+            if (str_starts_with($sql, '/*') === true) {
+                $commentEndPosition = strpos($sql, '*/');
 
-            if ($commentEndPosition === false) {
-                return $sql;
+                if ($commentEndPosition === false) {
+                    return $sql;
+                }
+
+                $sql = ltrim(substr($sql, $commentEndPosition + 2));
+
+                continue;
             }
 
-            $sql = ltrim(substr($sql, $commentEndPosition + 2));
+            $sql = $this->stripLeadingSqlLineComment($sql);
         }
 
         return $sql;
     }
 
+    private function stripLeadingSqlLineComment(string $sql): string
+    {
+        $lineEndPosition = strpos($sql, "\n");
+
+        if ($lineEndPosition === false) {
+            return '';
+        }
+
+        return ltrim(substr($sql, $lineEndPosition + 1));
+    }
+
     private function displayMessage(string $level, string $message): void
     {
-        $sqlForDisplayColor = $this->stripLeadingSqlComments($message);
+        $sqlForDisplayColor = $this->normalizeSqlForClassification($message);
 
         if ($level === LogLevel::ERROR) {
             echo " \n! \033[31m" . $message . "\033[0m";
         } elseif ($level === LogLevel::ALERT) {
             echo " \n! \033[35m" . $message . "\033[0m";
-        } elseif (str_starts_with($sqlForDisplayColor, 'SHOW')) {
+        } elseif (str_starts_with($sqlForDisplayColor, 'show')) {
             echo " \n> \033[34m" . $message . "\033[0m";
-        } elseif (str_starts_with($sqlForDisplayColor, 'SELECT')) {
+        } elseif (str_starts_with($sqlForDisplayColor, 'select')) {
             echo " \n> \033[32m" . $message . "\033[0m";
-        } elseif (str_starts_with($sqlForDisplayColor, 'INSERT')) {
+        } elseif ($this->isWriteSql($sqlForDisplayColor) === true) {
             echo " \n> \033[36m" . $message . "\033[0m";
         } else {
             echo " \n> \033[33m" . $message . "\033[0m";
