@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace SquidIT\Tests\Cycle\Sql\Tagger\Unit;
 
 use Cycle\Database\LoggerFactoryInterface;
-
 use PHPUnit\Framework\Attributes\AllowMockObjectsWithoutExpectations;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;

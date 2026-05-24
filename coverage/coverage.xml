@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<coverage line-rate="0.55760368663594" branch-rate="0" lines-covered="121" lines-valid="217" branches-covered="0" branches-valid="0" complexity="103" version="0.4">
-=======
-<coverage line-rate="0.93406593406593" branch-rate="0" lines-covered="170" lines-valid="182" branches-covered="0" branches-valid="0" complexity="86" version="0.4">
->>>>>>> origin/main
+<coverage line-rate="0.63670411985019" branch-rate="0" lines-covered="170" lines-valid="267" branches-covered="0" branches-valid="0" complexity="128" version="0.4">
   
   <packages>
     <package name="DatabaseManagerWithTagger.php" line-rate="1" branch-rate="0" complexity="16">
@@ -414,7 +410,6 @@
     <package name="Interface\WithTaggerInterface.php" line-rate="0" branch-rate="0" complexity="0">
       <classes/>
     </package>
-<<<<<<< HEAD
     <package name="Logger\DbLogger.php" line-rate="0" branch-rate="0" complexity="18">
       <classes>
         <class name="SquidIT\Cycle\Sql\Tagger\Logger\DbLogger" filename="src/Logger\DbLogger.php" line-rate="0" branch-rate="0" complexity="18">
@@ -529,9 +524,159 @@
         </class>
       </classes>
     </package>
-    <package name="Logger\DbLoggerFactory.php" line-rate="0" branch-rate="0" complexity="1">
+    <package name="Logger\DbLoggerFixedSize.php" line-rate="0" branch-rate="0" complexity="23">
       <classes>
-        <class name="SquidIT\Cycle\Sql\Tagger\Logger\DbLoggerFactory" filename="src/Logger\DbLoggerFactory.php" line-rate="0" branch-rate="0" complexity="1">
+        <class name="SquidIT\Cycle\Sql\Tagger\Logger\DbLoggerFixedSize" filename="src/Logger\DbLoggerFixedSize.php" line-rate="0" branch-rate="0" complexity="23">
+          <methods>
+            <method name="__construct" signature="int $maxSize" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="42" hits="0"/>
+                <line number="43" hits="0"/>
+                <line number="46" hits="0"/>
+                <line number="47" hits="0"/>
+                <line number="48" hits="0"/>
+              </lines>
+            </method>
+            <method name="getWriteCount" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="53" hits="0"/>
+              </lines>
+            </method>
+            <method name="getReadCount" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="58" hits="0"/>
+              </lines>
+            </method>
+            <method name="getQueries" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="66" hits="0"/>
+                <line number="67" hits="0"/>
+                <line number="68" hits="0"/>
+                <line number="69" hits="0"/>
+              </lines>
+            </method>
+            <method name="reset" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="74" hits="0"/>
+                <line number="75" hits="0"/>
+                <line number="76" hits="0"/>
+                <line number="77" hits="0"/>
+              </lines>
+            </method>
+            <method name="log" signature="$level, string|Stringable $message, array $context" line-rate="0" branch-rate="0" complexity="11">
+              <lines>
+                <line number="85" hits="0"/>
+                <line number="87" hits="0"/>
+                <line number="88" hits="0"/>
+                <line number="91" hits="0"/>
+                <line number="92" hits="0"/>
+                <line number="93" hits="0"/>
+                <line number="95" hits="0"/>
+                <line number="96" hits="0"/>
+                <line number="98" hits="0"/>
+                <line number="99" hits="0"/>
+                <line number="103" hits="0"/>
+                <line number="104" hits="0"/>
+                <line number="107" hits="0"/>
+                <line number="108" hits="0"/>
+                <line number="109" hits="0"/>
+                <line number="110" hits="0"/>
+                <line number="111" hits="0"/>
+                <line number="112" hits="0"/>
+                <line number="113" hits="0"/>
+                <line number="114" hits="0"/>
+                <line number="115" hits="0"/>
+                <line number="116" hits="0"/>
+                <line number="118" hits="0"/>
+              </lines>
+            </method>
+            <method name="enableDisplay" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="124" hits="0"/>
+              </lines>
+            </method>
+            <method name="disableDisplay" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="129" hits="0"/>
+              </lines>
+            </method>
+            <method name="addQuery" signature="SplQueue $queryQueue, string $query" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="134" hits="0"/>
+                <line number="136" hits="0"/>
+                <line number="137" hits="0"/>
+                <line number="140" hits="0"/>
+              </lines>
+            </method>
+            <method name="queueToArray" signature="SplQueue $queryQueue" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="149" hits="0"/>
+              </lines>
+            </method>
+            <method name="createQueryQueue" signature="" line-rate="0" branch-rate="0" complexity="1">
+              <lines>
+                <line number="157" hits="0"/>
+                <line number="158" hits="0"/>
+                <line number="160" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="42" hits="0"/>
+            <line number="43" hits="0"/>
+            <line number="46" hits="0"/>
+            <line number="47" hits="0"/>
+            <line number="48" hits="0"/>
+            <line number="53" hits="0"/>
+            <line number="58" hits="0"/>
+            <line number="66" hits="0"/>
+            <line number="67" hits="0"/>
+            <line number="68" hits="0"/>
+            <line number="69" hits="0"/>
+            <line number="74" hits="0"/>
+            <line number="75" hits="0"/>
+            <line number="76" hits="0"/>
+            <line number="77" hits="0"/>
+            <line number="85" hits="0"/>
+            <line number="87" hits="0"/>
+            <line number="88" hits="0"/>
+            <line number="91" hits="0"/>
+            <line number="92" hits="0"/>
+            <line number="93" hits="0"/>
+            <line number="95" hits="0"/>
+            <line number="96" hits="0"/>
+            <line number="98" hits="0"/>
+            <line number="99" hits="0"/>
+            <line number="103" hits="0"/>
+            <line number="104" hits="0"/>
+            <line number="107" hits="0"/>
+            <line number="108" hits="0"/>
+            <line number="109" hits="0"/>
+            <line number="110" hits="0"/>
+            <line number="111" hits="0"/>
+            <line number="112" hits="0"/>
+            <line number="113" hits="0"/>
+            <line number="114" hits="0"/>
+            <line number="115" hits="0"/>
+            <line number="116" hits="0"/>
+            <line number="118" hits="0"/>
+            <line number="124" hits="0"/>
+            <line number="129" hits="0"/>
+            <line number="134" hits="0"/>
+            <line number="136" hits="0"/>
+            <line number="137" hits="0"/>
+            <line number="140" hits="0"/>
+            <line number="149" hits="0"/>
+            <line number="157" hits="0"/>
+            <line number="158" hits="0"/>
+            <line number="160" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Logger\Factory\DbLoggerFactory.php" line-rate="0" branch-rate="0" complexity="1">
+      <classes>
+        <class name="SquidIT\Cycle\Sql\Tagger\Logger\Factory\DbLoggerFactory" filename="src/Logger\Factory\DbLoggerFactory.php" line-rate="0" branch-rate="0" complexity="1">
           <methods>
             <method name="getLogger" signature="?DriverInterface $driver" line-rate="0" branch-rate="0" complexity="1">
               <lines>
@@ -545,10 +690,10 @@
         </class>
       </classes>
     </package>
-    <package name="TableWithTagger.php" line-rate="0.020833333333333" branch-rate="0" complexity="27">
-=======
+    <package name="Logger\Interface\DbLoggerInterface.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes/>
+    </package>
     <package name="TableWithTagger.php" line-rate="1" branch-rate="0" complexity="27">
->>>>>>> origin/main
       <classes>
         <class name="SquidIT\Cycle\Sql\Tagger\TableWithTagger" filename="src/TableWithTagger.php" line-rate="1" branch-rate="0" complexity="27">
           <methods>
